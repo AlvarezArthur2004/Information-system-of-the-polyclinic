@@ -1,0 +1,66 @@
+﻿@using Microsoft.AspNetCore.Identity
+@using Auth.Models
+
+@inject SignInManager<ApplicationUser> SignInManager
+@inject UserManager<ApplicationUser> UserManager
+
+<link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+<link rel="stylesheet" href="~/css/site230.css" asp-append-version="true" />
+<link rel="stylesheet" href="~/Hospital.styles.css" asp-append-version="true" />
+
+<ul class="navbar-nav">
+@if (SignInManager.IsSignedIn(User))
+{
+
+        if (User.IsInRole("admin"))
+        {
+            <div class="dropdown">
+                <a class="nav-link dropdown-toggle text-dark" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="true">
+                    Admin Panel
+                </a>
+                <div class="dropdown-content">
+                    <a class="dropdown-item" asp-area="Identity" asp-page="/Account/Manage/Index">Профіль</a>
+                    <a class="dropdown-item" href="/Identity/Admin/Medics/Index?search=&column=Specialization&orderBy=desc">Лікарі</a>
+                    <a class="dropdown-item" asp-area="Identity" asp-page="/Admin/Medics/IndexPacient">Паціенти</a>
+                    <hr class="dropdown-divider">
+                    <a class="dropdown-item" asp-area="Identity" asp-page="/Account/Logout">Вийти з системи</a>
+                </div>
+            </div>
+        }
+        else if (User.IsInRole("client"))
+        {
+            <div class="dropdown">
+                <a class="nav-link dropdown-toggle text-dark" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="true">
+                    Pacient
+                </a>
+                <div class="dropdown-content">
+                    <a class="dropdown-item" asp-area="Identity" asp-page="/Account/Manage/Index">Профіль</a>
+                    <hr class="dropdown-divider">
+                    <a class="dropdown-item" asp-area="Identity" asp-page="/Account/Logout">Вийти з системи</a>
+                </div>
+            </div>
+        }
+        else if (User.IsInRole("seller"))
+        {
+            <div class="dropdown">
+                <a class="nav-link dropdown-toggle text-dark" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="true">
+                    Лікар
+                </a>
+                <div class="dropdown-content">
+                    <a class="dropdown-item" asp-area="Identity" asp-page="/Account/Manage/Index">Профіль</a>
+                    <hr class="dropdown-divider">
+                    <a class="dropdown-item" asp-area="Identity" asp-page="/Account/Logout">Вийти з системи</a>
+                </div>
+            </div>
+        }
+
+}
+else
+{
+    <div>
+            <a id="login" asp-area="Identity" asp-page="/Account/Login">Логін</a>
+            <a>/</a>
+            <a id="register" asp-area="Identity" asp-page="/Account/Register">Зареєструватися</a>
+    </div>
+}
+</ul>

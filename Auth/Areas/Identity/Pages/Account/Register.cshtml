@@ -1,0 +1,145 @@
+﻿@page
+@model RegisterModel
+@{
+    ViewData["Title"] = "Register";
+}
+<link rel="stylesheet" href="~/css/CreateMed12.css">
+
+<style>
+    body {
+        font-size: 1.4em;
+    }
+
+    h2 {
+        font-size: 1.7em;
+    }
+
+    .btn {
+        font-size: 1.4em;
+    }
+
+    .form-control {
+        font-size: 1.4em;
+    }
+
+    .form-select {
+        font-size: 1.4em;
+    }
+
+    .text-danger {
+        font-size: 1.4em;
+    }
+</style>
+
+<div class="div2">
+<div class="scale">
+<div class="row">
+    <div class="col-lg-6 mx-auto rounded border p-3">
+                <h2 class="text-center mb-3">Зареєструватися</h2>
+        <hr />
+        <div asp-validation-summary="ModelOnly" class="text-danger" role="alert"></div>
+
+        <form id="registerForm" asp-route-returnUrl="@Model.ReturnUrl" method="post">
+
+            <div class="row mb-3">
+                    <label class="col-sm-4 col-form-label">Ім'я</label>
+                <div class="col-sm-8">
+                    <input class="form-control" asp-for="Input.FirstName" />
+                    <span asp-validation-for="Input.FirstName" class="text-danger"></span>
+                </div>
+            </div>
+
+            <div class="row mb-3">
+                    <label class="col-sm-4 col-form-label">Прізвище</label>
+                <div class="col-sm-8">
+                    <input class="form-control" asp-for="Input.LastName" />
+                    <span asp-validation-for="Input.LastName" class="text-danger"></span>
+                </div>
+            </div>
+
+
+                    <div class="row mb-3">
+                        <label class="col-sm-4 col-form-label">Ім'я по батькові</label>
+                        <div class="col-sm-8">
+                            <input class="form-control" asp-for="Input.Patronymic" />
+                            <span asp-validation-for="Input.Patronymic" class="text-danger"></span>
+                        </div>
+                    </div>
+
+                    <div class="row mb-3">
+                        <label class="col-sm-4 col-form-label">Стать</label>
+                        <div class="col-sm-8">
+                            <select class="form-select" asp-for="Input.Gender">
+                                <option value="Male">Male</option>
+                                <option value="Female">Female</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <div class="row mb-3">
+                        <label class="col-sm-4 col-form-label">Дата Народження</label>
+                        <div class="col-sm-8">
+                            @{
+                                var currentDate = DateTime.Now;
+                                var formattedDate = currentDate.ToString("yyyy-MM-dd");
+                            }
+                            <input class="form-control" asp-for="Input.DateOfBirth" type="date" value="@formattedDate">
+                            <span asp-validation-for="Input.DateOfBirth" class="text-danger"></span>
+                        </div>
+                    </div>
+            
+            <div class="row mb-3">
+                    <label class="col-sm-4 col-form-label">Електронна пошта</label>
+                <div class="col-sm-8">
+                    <input class="form-control" asp-for="Input.Email" />
+                    <span asp-validation-for="Input.Email" class="text-danger"></span>
+                    </div>
+            </div>
+
+            <div class="row mb-3">
+                    <label class="col-sm-4 col-form-label">Номер Телефону</label>
+                <div class="col-sm-8">
+                    <input class="form-control" asp-for="Input.PhoneNumber" />
+                    <span asp-validation-for="Input.PhoneNumber" class="text-danger"></span>
+                </div>
+            </div>
+
+            <div class="row mb-3">
+                    <label class="col-sm-4 col-form-label">Адреса</label>
+                <div class="col-sm-8">
+                    <input class="form-control" asp-for="Input.Address" />
+                    <span asp-validation-for="Input.Address" class="text-danger"></span>
+                </div>
+            </div>
+
+
+            <div class="row mb-3">
+                    <label class="col-sm-4 col-form-label">Пароль</label>
+                <div class="col-sm-8">
+                    <input class="form-control" asp-for="Input.Password" />
+                    <span asp-validation-for="Input.Password" class="text-danger"></span>
+                </div>
+            </div>
+
+            <div class="row mb-3">
+                    <label class="col-sm-4 col-form-label">Підтвердити пароль</label>
+                <div class="col-sm-8">
+                    <input class="form-control" asp-for="Input.ConfirmPassword" />
+                    <span asp-validation-for="Input.ConfirmPassword" class="text-danger"></span>
+                </div>
+            </div>
+
+            <div class="row mb-3">
+                <div class="offset-sm-4 col-sm-4 d-grid">
+                        <button type="submit" class="btn btn-primary">Зареєструватися</button>
+                </div>
+                <div class="col-sm-4 d-grid">
+                        <a class="btn btn-outline-primary" href="/" role="button">Скасувати</a>
+                </div>
+            </div>
+        </form>
+    </div>
+
+</div>
+</div>
+</div>

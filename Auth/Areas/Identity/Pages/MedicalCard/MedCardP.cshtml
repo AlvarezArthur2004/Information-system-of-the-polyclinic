@@ -1,0 +1,19 @@
+﻿@page
+@model Auth.Areas.Identity.Pages.MedicalCard.MedCardPModel
+@{
+}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Medics</title>
+	<script src="~/lib/daypilot/daypilot-all.min.js"></script>
+	<link rel="stylesheet" href="~/css/CreateMed12.css">
+
+</head>
+<body>
+    <iframe src="@Url.Content(Model.HtmlContent)" style="width: 100%; height: 1000px;" frameborder="0"></iframe>
+</body>
+</html>

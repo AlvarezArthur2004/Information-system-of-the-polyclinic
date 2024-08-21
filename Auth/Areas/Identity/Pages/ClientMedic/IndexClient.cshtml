@@ -1,0 +1,244 @@
+﻿@page
+@model Auth.Areas.Identity.Pages.ClientMedic.IndexClientModel
+@{
+}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Medics</title>
+    <link rel="stylesheet" href="~/css/IndexMed7087.css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.6/css/all.css">
+    <script src="https://kit.fontawesome.com/c1df782baf.js"></script>
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+    <link rel='stylesheet' href='https://cdn-uicons.flaticon.com/2.1.0/uicons-thin-rounded/css/uicons-thin-rounded.css'>
+    <link rel='stylesheet' href='https://cdn-uicons.flaticon.com/2.1.0/uicons-regular-rounded/css/uicons-regular-rounded.css'>
+
+</head>
+<body>
+
+    <script>
+        function sortTable(column) {
+            let orderBy = "desc";
+            let currentColumn = "@Model.column";
+            let currentOrder = "@Model.orderBy";
+            if (column == currentColumn) {
+                if (currentOrder == "asc") orderBy = "desc";
+                else orderBy = "asc";
+            }
+
+            window.location.href = "?search=@(Model.search)&column=" + column + "&orderBy=" + orderBy;
+        }
+
+ 
+        function openSortModal() {
+            document.getElementById("sortModal").style.display = "block";
+        }
+
+        function closeSortModal() {
+            document.getElementById("sortModal").style.display = "none";
+        }
+
+        function applySort(sortBy) {
+            sortTable(sortBy);
+            closeSortModal();
+        }
+        function selectProfession(profession) {
+            document.getElementById("professionInput").value = profession;
+            closeProfessionList();
+        }
+
+        function openProfessionList() {
+            document.getElementById("professionList").style.display = "block";
+        }
+
+        function closeProfessionList() {
+            document.getElementById("professionList").style.display = "none";
+        }
+    </script>
+
+    <div class="div1">
+
+
+        <div class="wrapper">
+            <div class="search_box">
+                <button class="sort-btn" onclick="openProfessionList()">Професія</button>
+                <input type="hidden" id="professionInput" value="">
+                <div id="professionList" class="profession-list">
+                    <button class="profession-btn" onclick="applySort('Terapevt')">Терапевт</button>
+                    <button class="profession-btn" onclick="applySort('Hirurg')">Хірург</button>
+                    <button class="profession-btn" onclick="applySort('Pediatr')">Педіатр</button>
+                    <button class="profession-btn" onclick="applySort('Nevrolog')">Невролог</button>
+                    <button class="profession-btn" onclick="applySort('Dermatolog')">Дерматолог</button>
+                    <button class="profession-btn" onclick="applySort('PlastichnyHirurg')">Пластичний хірург</button>
+                    <button class="profession-btn" onclick="applySort('Ortoped')">Ортопед</button>
+                    <button class="profession-btn" onclick="applySort('FizichniTerapevt')">Фізичний терапевт</button>
+                    <button class="profession-btn" onclick="applySort('Psichyk')">Психіатр</button>
+                    <button class="profession-btn" onclick="applySort('Oftalmolog')">Офтальмолог</button>
+                </div>
+                <button class="sort-btn" onclick="sortTable('All')">Усі</button>
+                <button class="sort-btn" onclick="sortTable('Best')">Найкращі</button>
+                <form>
+                    <div class="search_field">
+                        <input type="text" class="input" placeholder="Search" name="search" value="@Model.search" placeholder="Search" aria-label="Search">
+                        <i class="fas fa-search"></i>
+                    </div>
+                </form>
+            </div>
+        </div>
+
+        <button class="sort-modal-btn" onclick="openSortModal()">Сортировать</button>
+
+        <!-- Модальное окно для сортировки -->
+
+        <div class="main-doctors">
+            <div class="main-inner-doctor">
+                @foreach (var medic in Model.Medics)
+                {
+                    double starkol = 0;
+                    double kol = 0;
+
+                    // Фильтрация комментариев для текущего медика
+                    var medicComments = @Model.Comments.Where(c => c.MedicId == medic.Id);
+
+                    foreach (var comment in medicComments)
+                    {
+                        starkol += Convert.ToInt32(comment.Rate);
+                        kol++;
+                    }
+
+                    double result = Math.Ceiling(starkol / kol);
+
+                    <div class="doc-poster" onclick="location.href='/Identity/ClientMedic/DoctorInfo?id=@medic.Id'">
+                        <div class="doc-icons">
+                            @for(int i = 0; i < result; i++){
+                            <span class="star1">&#9733;</span>
+                            }
+                        </div>
+                        <img class="round" src="/photos/@medic.ImageFileName" alt="user" width="370" height="470">
+                        <div class="doc-details">
+                            <h2>@medic.FirtsName @medic.Patronymic<br>@medic.Specialization</h2>
+                            
+                        </div>
+                    </div>
+                }
+            </div>
+        </div>
+    </div>
+
+    <ul class="pagination">
+        @for (int i = 1; i <= Model.totalPages; i++)
+        {
+            string active = "";
+            if (i == Model.pageIndex) active = "active";
+            <li class="page-item @active" aria-current="page">
+                <a class="page-link" href="?pageIndex=@(i)&search=@(Model.search)&column=@(Model.column)&orderBy=@(Model.orderBy)">@i</a>
+                
+            </li>
+        }
+    </ul>
+
+    <style>
+
+        .star1 {
+            display: inline-block;
+            font-size: 40px;
+            color: orange;
+        }
+
+        .sort-btn {
+            background-color: var(--maincolor);
+            color: var(--secondcolor);
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+            margin-right: 10px;
+            transition: all 0.3s ease;
+        }
+
+            .sort-btn:hover {
+                background-color: #ff7b00; 
+            }
+
+        .sort-modal-btn {
+            background-color: var(--maincolor);
+            color: var(--secondcolor);
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+            margin-top: 10px;
+            transition: all 0.3s ease;
+        }
+
+            .sort-modal-btn:hover {
+                background-color: #ff7b00;
+            }
+
+        .sort-option-btn {
+            background-color: var(--maincolor);
+            color: var(--secondcolor);
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+            margin-top: 10px;
+            transition: all 0.3s ease;
+        }
+
+            .sort-option-btn:hover {
+                background-color: #ff7b00; 
+            }
+
+        .profession-list {
+            max-height: 150px; 
+            overflow-y: auto;
+            display: none;
+            position: absolute;
+            background-color: #ffffff;
+            min-width: 160px;
+            box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+            z-index: 1;
+            border-radius: 5px;
+        }
+
+        .profession-btn {
+            background-color: var(--maincolor);
+            color: var(--secondcolor);
+            padding: 10px;
+            text-align: left;
+            border: none;
+            cursor: pointer;
+            width: 100%;
+            transition: all 0.3s ease;
+        }
+
+            .profession-btn:hover {
+                background-color: #ff7b00;
+            }
+
+        .sort-btn, .sort-modal-btn, .sort-option-btn {
+            background-color: var(--maincolor);
+            color: var(--secondcolor);
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+            margin-right: 10px;
+            transition: all 0.3s ease;
+        }
+
+            .sort-btn:hover, .sort-modal-btn:hover, .sort-option-btn:hover {
+                background-color: #ff7b00; 
+            }
+    </style>
+
+</body>
+</html>

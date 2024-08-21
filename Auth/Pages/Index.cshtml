@@ -1,0 +1,274 @@
+﻿@page
+@model IndexModel
+@{
+    ViewData["Title"] = "Home page";
+}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Medics</title>
+    <link rel="stylesheet" href="~/css/IndexMain130.css">
+    <link rel="stylesheet" href="~/css/site230.css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.6/css/all.css">
+        <script src="https://kit.fontawesome.com/c1df782baf.js"></script>
+    <link rel='stylesheet' href='https://cdn-uicons.flaticon.com/2.1.0/uicons-thin-rounded/css/uicons-thin-rounded.css'>
+    <link rel='stylesheet' href='https://cdn-uicons.flaticon.com/2.1.0/uicons-regular-rounded/css/uicons-regular-rounded.css'>
+</head>
+<body>
+    <!-- header section ended -->
+    <!-- Home section started -->
+
+    <div class="main-home">
+
+        <div class="home">
+            <div class="home-left-content">
+                <span>Ласкаво просимо до управління лікарні</span>
+                <h2>Ми піклуємося про здоров'я наших<br> пацієнтів</h2>
+                <p class="lorem">
+                    Здоров'я на першому місці! Наша мета - ваше благополуччя.
+                </p>
+
+                <div class="home-btn">
+                    <a class="homebtnsec" href="/Identity/ClientMedic/IndexClient">Записатися на прийом</a>
+                </div>
+
+            </div>
+
+            <div class="home-right-content">
+                <img src="/Content/MainPageContent/hero2.png" alt="">
+            </div>
+        </div>
+    </div>
+
+
+    <div class="technology">
+        <div class="main-technology">
+
+            <div class="inner-technology">
+                <span></span>
+                <i class="fi fi-tr-hands-heart"></i>
+                <h2>Якість та безпека</h2>
+                <p>Наша лікарня використовує сучасні технології та має команду справжніх експертів.</p>
+            </div>
+
+            <div class="inner-technology">
+                <span></span>
+                <i class="fi fi-rr-doctor"></i>
+                <h2>Швидкість запису</h2>
+                <p>Ми надаємо можливість швидко та зручно записатися на прийом, щоб ви могли отримати необхідну допомогу якомога швидше.</p>
+            </div>
+
+            <div class="inner-technology">
+                <span></span>
+                <i class="fi fi-tr-user-md"></i>
+                <h2>Вибір якісних лікарів</h2>
+                <p>Наша лікарня пропонує великий вибір кваліфікованих лікарів у різних медичних спеціальностях, щоб задовольнити всі ваші потреби в лікуванні.</p>
+            </div>
+        </div>
+    </div>
+
+
+    <div class="main-doctors">
+        <div class="doctors-heading">
+            <h2>Наші найкращі лікарі</h2>
+        </div>
+
+        <div class="main-inner-doctor">
+            @{
+                int counter = 0;
+            }
+
+            @foreach (var medic in Model.Medics)
+            {
+                @if (counter < 5)
+                {
+                    double starkol = 0;
+                    double kol = 0;
+
+                    // Фильтрация комментариев для текущего медика
+                    var medicComments = @Model.Comments.Where(c => c.MedicId == medic.Id);
+
+                    foreach (var comment in medicComments)
+                    {
+                        starkol += Convert.ToInt32(comment.Rate);
+                        kol++;
+                    }
+
+                    double result = Math.Ceiling(starkol / kol);
+
+                    <div class="doc-poster" onclick="location.href='/Identity/ClientMedic/DoctorInfo?id=@medic.Id'">
+                        <div class="doc-icons">
+                            @for (int i = 0; i < result; i++)
+                            {
+                                <span class="star1">&#9733;</span>
+                            }
+                        </div>
+                        <img class="round" src="/photos/@medic.ImageFileName" alt="user" width="370" height="470">
+                        <div class="doc-details">
+                            <h2>@medic.FirtsName @medic.Patronymic<br>@medic.Specialization</h2>
+
+                        </div>
+                    </div>
+                    counter++;
+                }
+                else
+                {
+                    break;
+                }
+            }
+
+
+        </div>
+
+    </div>
+
+    <style>
+        .star1 {
+            display: inline-block;
+            font-size: 40px;
+            color: orange;
+        }
+    </style>
+
+    <div class="main-about">
+
+        <div class="about-heading">Про нас</div>
+
+        <div class="inner-main-about">
+            <div class="about-inner-content-left">
+                <img src="images/about1.png" alt="">
+            </div>
+
+            <div class="about-inner-content">
+                <div class="about-right-content">
+                    <h2>Обирайте найкращі клініки в місті разом з нами.</h2>
+                    <p>
+                        Наша мета - допомогти вам знайти самі надійні та якісні медичні установи, де ви отримаєте найкраще обслуговування.
+                    </p>
+                    <p class="aboutsec-content">
+                        Наша компанія, на чолі з командою досвідчених фахівців, має величезний досвід у співпраці з різними клініками по всьому світу. Ми ретельно відбираємо найкращі заклади медичної сфери, які відповідають найвищим стандартам якості та надійності. Наша головна мета - це ваше благополуччя та задоволення від надання медичних послуг.
+
+                        Ви маєте можливість самостійно обрати найзручнішу дату та час для консультації. Ми надамо вам повну інформацію про доступність лікарів та клінік, щоб ви могли з легкістю прийняти розумне рішення щодо свого лікування. Наша компанія готова надати вам повноцінну підтримку з оформленням всіх необхідних документів, а також забезпечити вас підтримкою на кожному етапі вашого лікування - від початкового вибору клініки до відновлення після процедур.
+
+                        Ми надаємо можливість самостійного керування процесом, дозволяючи вам обирати те, що відповідає вашим потребам і переконанням. Наша команда завжди готова допомогти вам зробити правильний вибір і забезпечити вам найкращі умови для швидкого і якісного відновлення.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+    <div class="main-review">
+        <section>
+            <div class="review-heading">
+                <h1>Відгуки наших пацієнтів</h1>
+            </div>
+
+            <div class="main-inner-review">
+
+                <div class="review-inner-content">
+
+                    <div class="review-box">
+                        <img src="images/pic1.png" alt="">
+
+                        <h2>Марія Іванова</h2>
+                        <div class="review-stars">
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                        </div>
+
+                        <div class="review-text">
+                            <p>Чудова медична допомога, уважний персонал та затишна атмосфера. Дуже задоволена результатом лікування!</p>
+                        </div>
+
+                    </div>
+
+                    <div class="review-box">
+                        <img src="images/pic2.png" alt="">
+
+                        <h2>Олексій Петров</h2>
+                        <div class="review-stars">
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                        </div>
+
+                        <div class="review-text">
+                            <p>Професійні лікарі, оперативне обслуговування, чудові умови перебування. Дякую за турботу!</p>
+                        </div>
+
+                    </div>
+
+                    <div class="review-box">
+                        <img src="images/pic3.png" alt="">
+
+                        <h2>Олена Смірнова</h2>
+                        <div class="review-stars">
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                        </div>
+
+                        <div class="review-text">
+                            <p>Дякую всьому колективу за високий професіоналізм, уважне ставлення та оперативну допомогу. Дуже задоволена!</p>
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+        </section>
+    </div>
+
+
+
+    <div class="main-footer">
+        <div class="footer-inner">
+            <div class="footer-content">
+                <h1>Контактна інформація:</h1>
+                <div class="link">
+                    <a href="">Адреса: вул. Примерна, 123, м. Київ</a>
+                    <a href="">Телефон: +380123456789</a>
+                    <a href="">Email: info@example.com</a>
+                    <a href="">Графік роботи: Пн-Пт: 8:00 - 20:00, Сб-Нд: 9:00 - 18:00</a>
+                </div>
+            </div>
+
+            <div class="footer-content">
+                <h1>Корисні посилання:</h1>
+                <div class="link">
+                    <a href="">Офіційний сайт</a>
+                    <a href="">Сторінка в Facebook</a>
+                    <a href="">Сторінка в Instagram</a>
+                </div>
+            </div>
+
+            <div class="footer-content">
+                <h1>Сертифікати</h1>
+                <div class="link">
+                    <a href="">Сертифікати та ліцензії:</a>
+                    <a href="">Наша клініка має всі необхідні ліцензії та сертифікати якості, що підтверджують наш професіоналізм.</p></a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+
+</body>
+</html>
+
+
+

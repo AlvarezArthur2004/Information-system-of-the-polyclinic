@@ -1,0 +1,400 @@
+﻿/* styles.css */
+
+
+/*
+.doctor-card {
+    position: relative;
+    width: 90%;
+    margin: 25px auto;
+    background-color: #f9f9f9;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0px 0px 10px 0px rgba(0,0,0,0.2);
+    overflow: hidden;
+}
+
+.avatar {
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    float: left;
+    margin-right: 20px;
+    object-fit: cover;
+}
+
+.doctor-info {
+    float: left;
+}
+
+    .doctor-info h2 {
+        margin-top: 0;
+    }
+
+.admin-buttons {
+    padding: 15px;
+    position: absolute;
+    top: 20px;
+    right: 20px;
+}
+
+.edit-btn,
+.delete-btn {
+    background-color: #FFF;
+    color: #000;
+    padding: 8px 12px;  Увеличенные отступы 
+    border: 2px solid #000;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s, color 0.3s, border-color 0.3s;
+}
+    
+
+    .edit-btn:hover,
+    .delete-btn:hover {
+        color: #FFA500;
+        border-color: #FFA500;
+    }
+
+.description {
+    clear: both;
+}
+
+.price {
+    position: absolute;
+    bottom: 20px;
+    right: 20px;
+    font-size: 18px;
+    color: #555;
+}
+
+
+    */
+/*
+
+.search-input {
+    width: calc(100% - 140px);
+    Растягиваем поле ввода padding: 8px 12px;
+    Увеличенные отступы border: 2px solid #000;
+    border-radius: 5px;
+    transition: background-color 0.3s, color 0.3s, border-color 0.3s;
+}
+
+.search-btn {
+    padding: 8px 12px;
+    Увеличенные отступы border: 2px solid #000;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s, color 0.3s, border-color 0.3s;
+}
+    */
+    .search-btn:hover {
+        color: #FFA500;
+        border-color: #FFA500;
+    }
+
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap');
+
+:root {
+    --maincolor: #f96900; /* Оранжевый цвет */
+    --secondcolor: #ffffff; /* Белый цвет */
+    --thirdcolor: #4A5764;
+    --textcolor: black;
+}
+
+* {
+    transition: all .2s linear;
+}
+
+.div1 {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    outline: none;
+    border: none;
+    text-decoration: none;
+    /*text-transform: capitalize;*/
+    transition: all .2s linear;
+    font-family: "Inter", sans-serif;
+}
+/* Doctors  */
+
+.main-doctors {
+    top: 30%;
+    left: 0;
+    position: absolute;
+    padding: 2rem 7%;
+    background-image: url(images/backgroung-pattern-3.png);
+    background-color: #f5f5f5;
+    width: 100%;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+.doctors-heading h2 {
+    font-size: 45px !important; /* Збільште розмір тексту на ваш вибір */
+    text-align: center;
+    margin: 4rem;
+    color: var(--maincolor);
+}
+
+.main-inner-doctor {
+    align-items: center;
+    gap: 6rem;
+
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.doc-poster {
+    width: 350px; 
+    margin: 1rem; 
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+    position: relative;
+    overflow: hidden;
+}
+
+    .doc-poster img {
+        width: 100%;
+        border: 0.7rem solid var(--maincolor);
+    }
+
+    .doc-poster:hover img {
+        border-radius: 0 50px 0 0;
+    }
+
+.doc-icons {
+    position: absolute;
+    top: 5%;
+    left: 5%;
+    transition: 0.5s;
+}
+
+
+.doc-icons i {
+    font-size: 2rem;
+    margin: 0.5rem;
+    border: 1px solid var(--secondcolor);
+    color: var(--maincolor);
+    padding: 1rem;
+    background-color: white;
+    cursor: pointer;
+}
+
+    .doc-icons i:hover {
+        background-color: white;
+        color: var(--secondcolor);
+        border-radius: 10px !important;
+        transform: scale(1.2);
+        border: 1px solid var(--maincolor);
+    }
+
+.doc-poster::after {
+    content: "";
+    background: linear-gradient(0deg, #f5f5f5 50%, transparent);
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    left: 0;
+    bottom: 0;
+    z-index: 1;
+    bottom: -200px;
+    transition: 0.5s;
+}
+
+.doc-poster:hover:after {
+    bottom: -100px;
+}
+
+
+.doc-details {
+    position: absolute;
+    text-align: center;
+    z-index: 2;
+    bottom: -30px;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+    .doc-details h2 {
+        color: black;
+        font-size: 25px;
+        padding: 2rem 0;
+    }
+
+    .doc-details i {
+        padding: 0.5rem;
+        font-size: 2.5rem;
+        color: var(--maincolor);
+        cursor: pointer;
+    }
+
+        .doc-details i:hover {
+            color: var(--secondcolor);
+            transform: scale(1.2);
+        }
+
+.doc-poster:hover .doc-details {
+    bottom: 10px;
+}
+
+
+@media (max-width:768px) {
+
+    html {
+        font-size: 55%;
+    }
+
+    .right-icons {
+        display: flex;
+        align-items: center;
+    }
+
+    #menu-bars {
+        display: initial;
+    }
+
+    header {
+        padding: 2rem;
+        background-color: white;
+    }
+
+    .navbar {
+        position: absolute;
+        top: 100%;
+        left: -100%;
+        height: 100vh;
+        width: 100%;
+        background-color: white;
+    }
+
+        .navbar.active {
+            left: 0;
+        }
+
+        .navbar a {
+            display: block;
+            margin: 2rem;
+            padding: 1rem;
+            border: 1px solid var(--textcolor);
+        }
+
+    .home .home-left-content {
+        margin-top: 50px;
+        padding: 2rem;
+    }
+
+        .home .home-left-content h2 {
+            font-size: 30px;
+        }
+
+    .main-technology {
+        margin-top: 0;
+    }
+
+    .about-right-content h2 {
+        font-size: 20px;
+    }
+}
+
+
+/*Filters*/
+
+
+.wrapper {
+    position: absolute;
+    top: 20%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+}
+
+    .wrapper .search_box {
+        width: 500px;
+        background: #fff;
+        border-radius: 5px;
+        height: 65px;
+        display: flex;
+        padding: 10px;
+        box-shadow: 0 8px 6px -10px #b3c6ff;
+    }
+
+        .wrapper .search_box .dropdown {
+            width: 150px;
+            border-right: 2px solid #dde2f1;
+            color: #9fa3b1;
+            position: relative;
+            cursor: pointer;
+        }
+
+            .wrapper .search_box .dropdown .default_option {
+                text-transform: uppercase;
+                padding: 13px 15px;
+                font-size: 14px;
+            }
+
+            .wrapper .search_box .dropdown ul {
+                position: absolute;
+                top: 70px;
+                left: -10px;
+                background: #fff;
+                width: 150px;
+                border-radius: 5px;
+                padding: 20px;
+                display: none;
+                box-shadow: 8px 8px 6px -10px #f96900;
+            }
+
+                .wrapper .search_box .dropdown ul.active {
+                    display: block;
+                }
+
+                .wrapper .search_box .dropdown ul li {
+                    padding-bottom: 20px;
+                }
+
+                    .wrapper .search_box .dropdown ul li:last-child {
+                        padding-bottom: 0;
+                    }
+
+                    .wrapper .search_box .dropdown ul li:hover {
+                        color: #f96900;
+                    }
+
+            .wrapper .search_box .dropdown:before {
+                content: "";
+                position: absolute;
+                top: 18px;
+                right: 20px;
+                border: 8px solid;
+                border-color: #f96900 transparent transparent transparent;
+            }
+
+        .wrapper .search_box .search_field {
+            width: 350px;
+            height: 100%;
+            position: relative;
+        }
+
+            .wrapper .search_box .search_field .input {
+                width: 100%;
+                height: 100%;
+                border: 0px;
+                font-size: 16px;
+                padding-left: 20px;
+                padding-right: 38px;
+                color: #f96900;
+            }
+
+            .wrapper .search_box .search_field .fas {
+                position: absolute;
+                top: 10px;
+                right: 10px;
+                font-size: 22px;
+                color: #f96900;
+                cursor: pointer;
+            }
+
+::-webkit-input-placeholder { /* Chrome/Opera/Safari */
+    color: #9fa3b1;
+}

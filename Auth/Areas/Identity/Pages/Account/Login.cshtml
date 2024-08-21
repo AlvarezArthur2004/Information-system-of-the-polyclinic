@@ -1,0 +1,80 @@
+﻿@page
+@model LoginModel
+
+@{
+    ViewData["Title"] = "Log in";
+}
+<link rel="stylesheet" href="~/css/CreateMed12.css">
+
+<style>
+    body {
+        font-size: 1.4em;
+    }
+
+    h2 {
+        font-size: 1.7em;
+    }
+
+    .btn {
+        font-size: 1.4em;
+    }
+
+    .form-control {
+        font-size: 1.4em;
+    }
+
+    .form-select {
+        font-size: 1.4em;
+    }
+
+    .text-danger {
+        font-size: 1.4em;
+    }
+</style>
+<div class="div2">
+<div class="scale">
+<div class="row">
+    <div class="col-md-4 mx-auto rounded border p-3">
+        <section>
+                <h2 class="text-center mb-3">Будь ласка, увійдіть.</h2>
+            <hr />
+            <div asp-validation-summary="ModelOnly" class="text-danger" role="alert"></div>
+            <form id="account" method="post">
+
+                <div class="mb-3">
+                        <label class="form-label">Електронна пошта</label>
+                    <input asp-for="Input.Email" class="form-control" />
+                    <span asp-validation-for="Input.Email" class="text-danger"></span>
+                </div>
+                <div class="mb-3">
+                        <label asp-for="Input.Password" class="form-label">Пароль</label>
+                    <input asp-for="Input.Password" class="form-control"/>
+                    <span asp-validation-for="Input.Password" class="text-danger"></span>
+                </div>
+                <div>
+                        <div class="checkbox">
+                            <label class="form-label">
+                                <input class="form-check-input" asp-for="Input.RememberMe" />
+                                Запам'ятати мене
+                            </label>
+                        </div>
+                </div>
+
+                <div class="row mb-3">
+                    <div class="col d-grid">
+                            <button type="submit" class="btn btn-primary">Увійдіть в систему</button>
+                    </div>
+                    <div class="col d-grid">
+                            <a class="btn btn-outline-primery" href="/" role="button">Скасувати</a>
+                    </div>
+                </div>
+
+                <div>
+                        <a class="btn btn-link" id="forgot-password" asp-page="./ForgotPassword">Забули пароль?</a>
+                </div>
+            </form>
+        </section>
+    </div>
+</div>
+</div>
+</div>

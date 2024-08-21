@@ -1,0 +1,103 @@
+﻿/*@import url('https://fonts.googleapis.com/css2?family=Martel:wght@300&family=Poppins&display=swap');*/
+
+@import url('https://fonts.googleapis.com/css2?family=Exo+2:ital,wght@0,100..900;1,100..900&family=Lora:ital,wght@0,400..700;1,400..700&family=Yeseva+One&display=swap');
+
+:root {
+    --black: #222;
+    --white: #fff;
+    --hover: #f96900;
+    --box-shadow: 0 .5rem 1rem rgba(0, 0, 0, .2);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Yeseva One", serif;
+    font-weight: 400;
+    font-style: normal;
+    border: none;
+    outline: none;
+    text-decoration: none;
+    /*text-transform: capitalize;*/
+}
+
+section .logo img {
+    width: 40px; 
+    height: auto; 
+}
+
+
+html {
+    font-size: 62.5%;
+    overflow-x: hidden;
+}
+
+section {
+    padding: 3rem 10%;
+}
+
+.header {
+    background: var(--white);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: var(--box-shadow);
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 100;
+}
+
+    .header .navbar a {
+        font-size: 2.4rem;
+        margin-left: 2rem;
+        color: var(--black);
+        transition: 0.5s;
+    }
+
+        .header .navbar a:hover {
+            color: var(--hover);
+        }
+
+.dropdown {
+    position: relative;
+    display: inline-block;
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #f9f9f9;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+    z-index: 1;
+    width: auto;
+}
+
+    .dropdown-content a {
+        color: var(--black);
+        padding: 12px 16px;
+        display: block;
+        transition: 0.3s;
+        text-align: left;
+        white-space: nowrap; /* Prevent text wrapping */
+        overflow: hidden; /* Hide overflowed text */
+        text-overflow: ellipsis; /* Display ellipsis for overflowed text */
+    }
+
+        .dropdown-content a:hover {
+            background-color: var(--hover);
+            color: var(--white);
+        }
+
+/* Highlight the dropdown link text when the dropdown is active */
+.dropdown:hover a {
+    background-color: var(--white);
+    color: var(--black);
+}
+
+/* Display the dropdown content on hover */
+.dropdown:hover .dropdown-content {
+    display: block;
+}

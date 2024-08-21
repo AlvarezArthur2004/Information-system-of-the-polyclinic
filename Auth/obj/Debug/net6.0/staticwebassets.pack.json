@@ -1,0 +1,541 @@
+{
+  "Files": [
+    {
+      "Id": "C:\\Users\\User\\source\\repos\\Auth\\Auth\\obj\\Debug\\net6.0\\scopedcss\\projectbundle\\Auth.bundle.scp.css",
+      "PackagePath": "staticwebassets\\Auth.bundle.scp.css"
+    },
+    {
+      "Id": "C:\\Users\\User\\source\\repos\\Auth\\Auth\\wwwroot\\Content\\MainPageContent\\bg_1200.jpg",
+      "PackagePath": "staticwebassets\\Content\\MainPageContent\\bg_1200.jpg"
+    },
+    {
+      "Id": "C:\\Users\\User\\source\\repos\\Auth\\Auth\\wwwroot\\Content\\MainPageContent\\hero2.png",
+      "PackagePath": "staticwebassets\\Content\\MainPageContent\\hero2.png"
+    },
+    {
+      "Id": "C:\\Users\\User\\source\\repos\\Auth\\Auth\\wwwroot\\Content\\MainPageContent\\mainlogo.png",
+      "PackagePath": "staticwebassets\\Content\\MainPageContent\\mainlogo.png"
+    },
+    {
+      "Id": "C:\\Users\\User\\source\\repos\\Auth\\Auth\\wwwroot\\Data\\9101b0e2-3c5a-49e3-9ebd-5080cb8f0eff.docx",
+      "PackagePath": "staticwebassets\\Data\\9101b0e2-3c5a-49e3-9ebd-5080cb8f0eff.docx"
+    },
+    {
+      "Id": "C:\\Users\\User\\source\\repos\\Auth\\Auth\\wwwroot\\Data\\9101b0e2-3c5a-49e3-9ebd-5080cb8f0eff.html",
+      "PackagePath": "staticwebassets\\Data\\9101b0e2-3c5a-49e3-9ebd-5080cb8f0eff.html"
+    },
+    {
+      "Id": "C:\\Users\\User\\source\\repos\\Auth\\Auth\\wwwroot\\Data\\a5492bea-40f2-4837-8491-dfb6d0d0066f.docx",
+      "PackagePath": "staticwebassets\\Data\\a5492bea-40f2-4837-8491-dfb6d0d0066f.docx"
+    },
+    {
+      "Id": "C:\\Users\\User\\source\\repos\\Auth\\Auth\\wwwroot\\Data\\a5492bea-40f2-4837-8491-dfb6d0d0066f.html",
+      "PackagePath": "staticwebassets\\Data\\a5492bea-40f2-4837-8491-dfb6d0d0066f.html"
+    },
+    {
+      "Id": "C:\\Users\\User\\source\\repos\\Auth\\Auth\\wwwroot\\css\\CalendarDoctor55.css",
+      "PackagePath": "staticwebassets\\css\\CalendarDoctor55.css"
+    },
+    {
+      "Id": "C:\\Users\\User\\source\\repos\\Auth\\Auth\\wwwroot\\css\\CreateMed12.css",
+      "PackagePath": "staticwebassets\\css\\CreateMed12.css"
+    },
+    {
+      "Id": "C:\\Users\\User\\source\\repos\\Auth\\Auth\\wwwroot\\css\\DoctorInfo900.css",
+      "PackagePath": "staticwebassets\\css\\DoctorInfo900.css"
+    },
+    {
+      "Id": "C:\\Users\\User\\source\\repos\\Auth\\Auth\\wwwroot\\css\\FillWordInfo100.css",
+      "PackagePath": "staticwebassets\\css\\FillWordInfo100.css"
+    },
+    {
+      "Id": "C:\\Users\\User\\source\\repos\\Auth\\Auth\\wwwroot\\css\\IndexMain130.css",
+      "PackagePath": "staticwebassets\\css\\IndexMain130.css"
+    },
+    {
+      "Id": "C:\\Users\\User\\source\\repos\\Auth\\Auth\\wwwroot\\css\\IndexMed7087.css",
+      "PackagePath": "staticwebassets\\css\\IndexMed7087.css"
+    },
+    {
+      "Id": "C:\\Users\\User\\source\\repos\\Auth\\Auth\\wwwroot\\css\\IndexMedRedact1.css",
+      "PackagePath": "staticwebassets\\css\\IndexMedRedact1.css"
+    },
+    {
+      "Id": "C:\\Users\\User\\source\\repos\\Auth\\Auth\\wwwroot\\css\\MedicalCard110.css",
+      "PackagePath": "staticwebassets\\css\\MedicalCard110.css"
+    },
+    {
+      "Id": "C:\\Users\\User\\source\\repos\\Auth\\Auth\\wwwroot\\css\\Profile.css",
+      "PackagePath": "staticwebassets\\css\\Profile.css"
+    },
+    {
+      "Id": "C:\\Users\\User\\source\\repos\\Auth\\Auth\\wwwroot\\css\\site230.css",
+      "PackagePath": "staticwebassets\\css\\site230.css"
+    },
+    {
+      "Id": "C:\\Users\\User\\source\\repos\\Auth\\Auth\\wwwroot\\favicon.ico",
+      "PackagePath": "staticwebassets\\favicon.ico"
+    },
+    {
+      "Id": "C:\\Users\\User\\source\\repos\\Auth\\Auth\\wwwroot\\images\\about1.png",
+      "PackagePath": "staticwebassets\\images\\about1.png"
+    },
+    {
+      "Id": "C:\\Users\\User\\source\\repos\\Auth\\Auth\\wwwroot\\images\\about2.png",
+      "PackagePath": "staticwebassets\\images\\about2.png"
+    },
+    {
+      "Id": "C:\\Users\\User\\source\\repos\\Auth\\Auth\\wwwroot\\images\\about3.jpg",
+      "PackagePath": "staticwebassets\\images\\about3.jpg"
+    },
+    {
+      "Id": "C:\\Users\\User\\source\\repos\\Auth\\Auth\\wwwroot\\images\\about4.png",
+      "PackagePath": "staticwebassets\\images\\about4.png"
+    },
+    {
+      "Id": "C:\\Users\\User\\source\\repos\\Auth\\Auth\\wwwroot\\images\\backgroung-pattern-1.png",
+      "PackagePath": "staticwebassets\\images\\backgroung-pattern-1.png"
+    },
+    {
+      "Id": "C:\\Users\\User\\source\\repos\\Auth\\Auth\\wwwroot\\images\\backgroung-pattern-3.png",
+      "PackagePath": "staticwebassets\\images\\backgroung-pattern-3.png"
+    },
+    {
+      "Id": "C:\\Users\\User\\source\\repos\\Auth\\Auth\\wwwroot\\images\\bg blur2.jpg",
+      "PackagePath": "staticwebassets\\images\\bg blur2.jpg"
+    },
+    {
+      "Id": "C:\\Users\\User\\source\\repos\\Auth\\Auth\\wwwroot\\images\\bg-07.png",
+      "PackagePath": "staticwebassets\\images\\bg-07.png"
+    },
+    {
+      "Id": "C:\\Users\\User\\source\\repos\\Auth\\Auth\\wwwroot\\images\\blurbg1.jpg",
+      "PackagePath": "staticwebassets\\images\\blurbg1.jpg"
+    },
+    {
+      "Id": "C:\\Users\\User\\source\\repos\\Auth\\Auth\\wwwroot\\images\\color.txt",
+      "PackagePath": "staticwebassets\\images\\color.txt"
+    },
+    {
+      "Id": "C:\\Users\\User\\source\\repos\\Auth\\Auth\\wwwroot\\images\\her1.png",
+      "PackagePath": "staticwebassets\\images\\her1.png"
+    },
+    {
+      "Id": "C:\\Users\\User\\source\\repos\\Auth\\Auth\\wwwroot\\images\\hero.jpg",
+      "PackagePath": "staticwebassets\\images\\hero.jpg"
+    },
+    {
+      "Id": "C:\\Users\\User\\source\\repos\\Auth\\Auth\\wwwroot\\images\\hero2.png",
+      "PackagePath": "staticwebassets\\images\\hero2.png"
+    },
+    {
+      "Id": "C:\\Users\\User\\source\\repos\\Auth\\Auth\\wwwroot\\images\\img-06.png",
+      "PackagePath": "staticwebassets\\images\\img-06.png"
+    },
+    {
+      "Id": "C:\\Users\\User\\source\\repos\\Auth\\Auth\\wwwroot\\images\\img-08.jpg",
+      "PackagePath": "staticwebassets\\images\\img-08.jpg"
+    },
+    {
+      "Id": "C:\\Users\\User\\source\\repos\\Auth\\Auth\\wwwroot\\images\\logo.png",
+      "PackagePath": "staticwebassets\\images\\logo.png"
+    },
+    {
+      "Id": "C:\\Users\\User\\source\\repos\\Auth\\Auth\\wwwroot\\images\\logo2.png",
+      "PackagePath": "staticwebassets\\images\\logo2.png"
+    },
+    {
+      "Id": "C:\\Users\\User\\source\\repos\\Auth\\Auth\\wwwroot\\images\\logo3.png",
+      "PackagePath": "staticwebassets\\images\\logo3.png"
+    },
+    {
+      "Id": "C:\\Users\\User\\source\\repos\\Auth\\Auth\\wwwroot\\images\\pic1.png",
+      "PackagePath": "staticwebassets\\images\\pic1.png"
+    },
+    {
+      "Id": "C:\\Users\\User\\source\\repos\\Auth\\Auth\\wwwroot\\images\\pic2.png",
+      "PackagePath": "staticwebassets\\images\\pic2.png"
+    },
+    {
+      "Id": "C:\\Users\\User\\source\\repos\\Auth\\Auth\\wwwroot\\images\\pic3.png",
+      "PackagePath": "staticwebassets\\images\\pic3.png"
+    },
+    {
+      "Id": "C:\\Users\\User\\source\\repos\\Auth\\Auth\\wwwroot\\images\\pleased-young-female-doctor-wearing-medical-robe-stethoscope-around-neck-standing-with-closed-posture.jpg",
+      "PackagePath": "staticwebassets\\images\\pleased-young-female-doctor-wearing-medical-robe-stethoscope-around-neck-standing-with-closed-posture.jpg"
+    },
+    {
+      "Id": "C:\\Users\\User\\source\\repos\\Auth\\Auth\\wwwroot\\images\\review1.png",
+      "PackagePath": "staticwebassets\\images\\review1.png"
+    },
+    {
+      "Id": "C:\\Users\\User\\source\\repos\\Auth\\Auth\\wwwroot\\images\\review2.png",
+      "PackagePath": "staticwebassets\\images\\review2.png"
+    },
+    {
+      "Id": "C:\\Users\\User\\source\\repos\\Auth\\Auth\\wwwroot\\images\\team1.jpg",
+      "PackagePath": "staticwebassets\\images\\team1.jpg"
+    },
+    {
+      "Id": "C:\\Users\\User\\source\\repos\\Auth\\Auth\\wwwroot\\images\\team2.jpg",
+      "PackagePath": "staticwebassets\\images\\team2.jpg"
+    },
+    {
+      "Id": "C:\\Users\\User\\source\\repos\\Auth\\Auth\\wwwroot\\images\\team3.jpg",
+      "PackagePath": "staticwebassets\\images\\team3.jpg"
+    },
+    {
+      "Id": "C:\\Users\\User\\source\\repos\\Auth\\Auth\\wwwroot\\images\\team4.jpg",
+      "PackagePath": "staticwebassets\\images\\team4.jpg"
+    },
+    {
+      "Id": "C:\\Users\\User\\source\\repos\\Auth\\Auth\\wwwroot\\images\\team5.jpg",
+      "PackagePath": "staticwebassets\\images\\team5.jpg"
+    },
+    {
+      "Id": "C:\\Users\\User\\source\\repos\\Auth\\Auth\\wwwroot\\images\\team6.jpg",
+      "PackagePath": "staticwebassets\\images\\team6.jpg"
+    },
+    {
+      "Id": "C:\\Users\\User\\source\\repos\\Auth\\Auth\\wwwroot\\js\\site.js",
+      "PackagePath": "staticwebassets\\js\\site.js"
+    },
+    {
+      "Id": "C:\\Users\\User\\source\\repos\\Auth\\Auth\\wwwroot\\lib\\bootstrap\\LICENSE",
+      "PackagePath": "staticwebassets\\lib\\bootstrap"
+    },
+    {
+      "Id": "C:\\Users\\User\\source\\repos\\Auth\\Auth\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-grid.css"
+    },
+    {
+      "Id": "C:\\Users\\User\\source\\repos\\Auth\\Auth\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-grid.css.map"
+    },
+    {
+      "Id": "C:\\Users\\User\\source\\repos\\Auth\\Auth\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.min.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-grid.min.css"
+    },
+    {
+      "Id": "C:\\Users\\User\\source\\repos\\Auth\\Auth\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.min.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-grid.min.css.map"
+    },
+    {
+      "Id": "C:\\Users\\User\\source\\repos\\Auth\\Auth\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.css"
+    },
+    {
+      "Id": "C:\\Users\\User\\source\\repos\\Auth\\Auth\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.css.map"
+    },
+    {
+      "Id": "C:\\Users\\User\\source\\repos\\Auth\\Auth\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.min.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.min.css"
+    },
+    {
+      "Id": "C:\\Users\\User\\source\\repos\\Auth\\Auth\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.min.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.min.css.map"
+    },
+    {
+      "Id": "C:\\Users\\User\\source\\repos\\Auth\\Auth\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.css"
+    },
+    {
+      "Id": "C:\\Users\\User\\source\\repos\\Auth\\Auth\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.css.map"
+    },
+    {
+      "Id": "C:\\Users\\User\\source\\repos\\Auth\\Auth\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.min.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.min.css"
+    },
+    {
+      "Id": "C:\\Users\\User\\source\\repos\\Auth\\Auth\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.min.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.min.css.map"
+    },
+    {
+      "Id": "C:\\Users\\User\\source\\repos\\Auth\\Auth\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.css"
+    },
+    {
+      "Id": "C:\\Users\\User\\source\\repos\\Auth\\Auth\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.css.map"
+    },
+    {
+      "Id": "C:\\Users\\User\\source\\repos\\Auth\\Auth\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.min.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.min.css"
+    },
+    {
+      "Id": "C:\\Users\\User\\source\\repos\\Auth\\Auth\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.min.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.min.css.map"
+    },
+    {
+      "Id": "C:\\Users\\User\\source\\repos\\Auth\\Auth\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.css"
+    },
+    {
+      "Id": "C:\\Users\\User\\source\\repos\\Auth\\Auth\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.css.map"
+    },
+    {
+      "Id": "C:\\Users\\User\\source\\repos\\Auth\\Auth\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.min.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.min.css"
+    },
+    {
+      "Id": "C:\\Users\\User\\source\\repos\\Auth\\Auth\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.min.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.min.css.map"
+    },
+    {
+      "Id": "C:\\Users\\User\\source\\repos\\Auth\\Auth\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.css"
+    },
+    {
+      "Id": "C:\\Users\\User\\source\\repos\\Auth\\Auth\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.css.map"
+    },
+    {
+      "Id": "C:\\Users\\User\\source\\repos\\Auth\\Auth\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.min.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.min.css"
+    },
+    {
+      "Id": "C:\\Users\\User\\source\\repos\\Auth\\Auth\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.min.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.min.css.map"
+    },
+    {
+      "Id": "C:\\Users\\User\\source\\repos\\Auth\\Auth\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap.css"
+    },
+    {
+      "Id": "C:\\Users\\User\\source\\repos\\Auth\\Auth\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap.css.map"
+    },
+    {
+      "Id": "C:\\Users\\User\\source\\repos\\Auth\\Auth\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.min.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap.min.css"
+    },
+    {
+      "Id": "C:\\Users\\User\\source\\repos\\Auth\\Auth\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.min.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap.min.css.map"
+    },
+    {
+      "Id": "C:\\Users\\User\\source\\repos\\Auth\\Auth\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.css"
+    },
+    {
+      "Id": "C:\\Users\\User\\source\\repos\\Auth\\Auth\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.css.map"
+    },
+    {
+      "Id": "C:\\Users\\User\\source\\repos\\Auth\\Auth\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.min.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.min.css"
+    },
+    {
+      "Id": "C:\\Users\\User\\source\\repos\\Auth\\Auth\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.min.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.min.css.map"
+    },
+    {
+      "Id": "C:\\Users\\User\\source\\repos\\Auth\\Auth\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.js",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.js"
+    },
+    {
+      "Id": "C:\\Users\\User\\source\\repos\\Auth\\Auth\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.js.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.js.map"
+    },
+    {
+      "Id": "C:\\Users\\User\\source\\repos\\Auth\\Auth\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.min.js",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.min.js"
+    },
+    {
+      "Id": "C:\\Users\\User\\source\\repos\\Auth\\Auth\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.min.js.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.min.js.map"
+    },
+    {
+      "Id": "C:\\Users\\User\\source\\repos\\Auth\\Auth\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.esm.js",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.esm.js"
+    },
+    {
+      "Id": "C:\\Users\\User\\source\\repos\\Auth\\Auth\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.esm.js.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.esm.js.map"
+    },
+    {
+      "Id": "C:\\Users\\User\\source\\repos\\Auth\\Auth\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.esm.min.js",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.esm.min.js"
+    },
+    {
+      "Id": "C:\\Users\\User\\source\\repos\\Auth\\Auth\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.esm.min.js.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.esm.min.js.map"
+    },
+    {
+      "Id": "C:\\Users\\User\\source\\repos\\Auth\\Auth\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.js",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.js"
+    },
+    {
+      "Id": "C:\\Users\\User\\source\\repos\\Auth\\Auth\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.js.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.js.map"
+    },
+    {
+      "Id": "C:\\Users\\User\\source\\repos\\Auth\\Auth\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.min.js",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.min.js"
+    },
+    {
+      "Id": "C:\\Users\\User\\source\\repos\\Auth\\Auth\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.min.js.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.min.js.map"
+    },
+    {
+      "Id": "C:\\Users\\User\\source\\repos\\Auth\\Auth\\wwwroot\\lib\\daypilot\\daypilot-all.min.d.ts",
+      "PackagePath": "staticwebassets\\lib\\daypilot\\daypilot-all.min.d.ts"
+    },
+    {
+      "Id": "C:\\Users\\User\\source\\repos\\Auth\\Auth\\wwwroot\\lib\\daypilot\\daypilot-all.min.js",
+      "PackagePath": "staticwebassets\\lib\\daypilot\\daypilot-all.min.js"
+    },
+    {
+      "Id": "C:\\Users\\User\\source\\repos\\Auth\\Auth\\wwwroot\\lib\\jquery-validation-unobtrusive\\LICENSE.txt",
+      "PackagePath": "staticwebassets\\lib\\jquery-validation-unobtrusive\\LICENSE.txt"
+    },
+    {
+      "Id": "C:\\Users\\User\\source\\repos\\Auth\\Auth\\wwwroot\\lib\\jquery-validation-unobtrusive\\jquery.validate.unobtrusive.js",
+      "PackagePath": "staticwebassets\\lib\\jquery-validation-unobtrusive\\jquery.validate.unobtrusive.js"
+    },
+    {
+      "Id": "C:\\Users\\User\\source\\repos\\Auth\\Auth\\wwwroot\\lib\\jquery-validation-unobtrusive\\jquery.validate.unobtrusive.min.js",
+      "PackagePath": "staticwebassets\\lib\\jquery-validation-unobtrusive\\jquery.validate.unobtrusive.min.js"
+    },
+    {
+      "Id": "C:\\Users\\User\\source\\repos\\Auth\\Auth\\wwwroot\\lib\\jquery-validation\\LICENSE.md",
+      "PackagePath": "staticwebassets\\lib\\jquery-validation\\LICENSE.md"
+    },
+    {
+      "Id": "C:\\Users\\User\\source\\repos\\Auth\\Auth\\wwwroot\\lib\\jquery-validation\\dist\\additional-methods.js",
+      "PackagePath": "staticwebassets\\lib\\jquery-validation\\dist\\additional-methods.js"
+    },
+    {
+      "Id": "C:\\Users\\User\\source\\repos\\Auth\\Auth\\wwwroot\\lib\\jquery-validation\\dist\\additional-methods.min.js",
+      "PackagePath": "staticwebassets\\lib\\jquery-validation\\dist\\additional-methods.min.js"
+    },
+    {
+      "Id": "C:\\Users\\User\\source\\repos\\Auth\\Auth\\wwwroot\\lib\\jquery-validation\\dist\\jquery.validate.js",
+      "PackagePath": "staticwebassets\\lib\\jquery-validation\\dist\\jquery.validate.js"
+    },
+    {
+      "Id": "C:\\Users\\User\\source\\repos\\Auth\\Auth\\wwwroot\\lib\\jquery-validation\\dist\\jquery.validate.min.js",
+      "PackagePath": "staticwebassets\\lib\\jquery-validation\\dist\\jquery.validate.min.js"
+    },
+    {
+      "Id": "C:\\Users\\User\\source\\repos\\Auth\\Auth\\wwwroot\\lib\\jquery\\LICENSE.txt",
+      "PackagePath": "staticwebassets\\lib\\jquery\\LICENSE.txt"
+    },
+    {
+      "Id": "C:\\Users\\User\\source\\repos\\Auth\\Auth\\wwwroot\\lib\\jquery\\dist\\jquery.js",
+      "PackagePath": "staticwebassets\\lib\\jquery\\dist\\jquery.js"
+    },
+    {
+      "Id": "C:\\Users\\User\\source\\repos\\Auth\\Auth\\wwwroot\\lib\\jquery\\dist\\jquery.min.js",
+      "PackagePath": "staticwebassets\\lib\\jquery\\dist\\jquery.min.js"
+    },
+    {
+      "Id": "C:\\Users\\User\\source\\repos\\Auth\\Auth\\wwwroot\\lib\\jquery\\dist\\jquery.min.map",
+      "PackagePath": "staticwebassets\\lib\\jquery\\dist\\jquery.min.map"
+    },
+    {
+      "Id": "C:\\Users\\User\\source\\repos\\Auth\\Auth\\wwwroot\\photos\\20240210160321580.png",
+      "PackagePath": "staticwebassets\\photos\\20240210160321580.png"
+    },
+    {
+      "Id": "C:\\Users\\User\\source\\repos\\Auth\\Auth\\wwwroot\\photos\\20240223124257269.jpg",
+      "PackagePath": "staticwebassets\\photos\\20240223124257269.jpg"
+    },
+    {
+      "Id": "C:\\Users\\User\\source\\repos\\Auth\\Auth\\wwwroot\\photos\\20240223125649567.png",
+      "PackagePath": "staticwebassets\\photos\\20240223125649567.png"
+    },
+    {
+      "Id": "C:\\Users\\User\\source\\repos\\Auth\\Auth\\wwwroot\\photos\\20240224230551679.png",
+      "PackagePath": "staticwebassets\\photos\\20240224230551679.png"
+    },
+    {
+      "Id": "C:\\Users\\User\\source\\repos\\Auth\\Auth\\wwwroot\\photos\\20240225133327484.png",
+      "PackagePath": "staticwebassets\\photos\\20240225133327484.png"
+    },
+    {
+      "Id": "C:\\Users\\User\\source\\repos\\Auth\\Auth\\wwwroot\\photos\\20240225133942802.png",
+      "PackagePath": "staticwebassets\\photos\\20240225133942802.png"
+    },
+    {
+      "Id": "C:\\Users\\User\\source\\repos\\Auth\\Auth\\wwwroot\\photos\\20240225134036085.png",
+      "PackagePath": "staticwebassets\\photos\\20240225134036085.png"
+    },
+    {
+      "Id": "C:\\Users\\User\\source\\repos\\Auth\\Auth\\wwwroot\\photos\\20240225134128506.png",
+      "PackagePath": "staticwebassets\\photos\\20240225134128506.png"
+    },
+    {
+      "Id": "C:\\Users\\User\\source\\repos\\Auth\\Auth\\wwwroot\\photos\\20240316143012824.png",
+      "PackagePath": "staticwebassets\\photos\\20240316143012824.png"
+    },
+    {
+      "Id": "C:\\Users\\User\\source\\repos\\Auth\\Auth\\wwwroot\\photos\\20240316144732844.webp",
+      "PackagePath": "staticwebassets\\photos\\20240316144732844.webp"
+    },
+    {
+      "Id": "C:\\Users\\User\\source\\repos\\Auth\\Auth\\wwwroot\\photos\\20240316145011701.jpg",
+      "PackagePath": "staticwebassets\\photos\\20240316145011701.jpg"
+    },
+    {
+      "Id": "C:\\Users\\User\\source\\repos\\Auth\\Auth\\wwwroot\\photos\\20240316145502368.png",
+      "PackagePath": "staticwebassets\\photos\\20240316145502368.png"
+    },
+    {
+      "Id": "C:\\Users\\User\\source\\repos\\Auth\\Auth\\wwwroot\\photos\\20240429131023545.jpg",
+      "PackagePath": "staticwebassets\\photos\\20240429131023545.jpg"
+    },
+    {
+      "Id": "C:\\Users\\User\\source\\repos\\Auth\\Auth\\wwwroot\\photos\\20240429131139322.png",
+      "PackagePath": "staticwebassets\\photos\\20240429131139322.png"
+    },
+    {
+      "Id": "C:\\Users\\User\\source\\repos\\Auth\\Auth\\wwwroot\\photos\\20240503110447468.jpg",
+      "PackagePath": "staticwebassets\\photos\\20240503110447468.jpg"
+    },
+    {
+      "Id": "C:\\Users\\User\\source\\repos\\Auth\\Auth\\wwwroot\\photos\\20240503110530562.jpg",
+      "PackagePath": "staticwebassets\\photos\\20240503110530562.jpg"
+    },
+    {
+      "Id": "C:\\Users\\User\\source\\repos\\Auth\\Auth\\wwwroot\\photos\\20240503110825734.jpg",
+      "PackagePath": "staticwebassets\\photos\\20240503110825734.jpg"
+    },
+    {
+      "Id": "C:\\Users\\User\\source\\repos\\Auth\\Auth\\wwwroot\\photos\\20240617094655912.jpg",
+      "PackagePath": "staticwebassets\\photos\\20240617094655912.jpg"
+    },
+    {
+      "Id": "C:\\Users\\User\\source\\repos\\Auth\\Auth\\wwwroot\\photos\\3.jpg",
+      "PackagePath": "staticwebassets\\photos\\3.jpg"
+    },
+    {
+      "Id": "C:\\Users\\User\\source\\repos\\Auth\\Auth\\wwwroot\\photos\\4.jpg",
+      "PackagePath": "staticwebassets\\photos\\4.jpg"
+    },
+    {
+      "Id": "C:\\Users\\User\\source\\repos\\Auth\\Auth\\wwwroot\\photos\\5.jpg",
+      "PackagePath": "staticwebassets\\photos\\5.jpg"
+    },
+    {
+      "Id": "obj\\Debug\\net6.0\\staticwebassets\\msbuild.Auth.Microsoft.AspNetCore.StaticWebAssets.props",
+      "PackagePath": "build\\Microsoft.AspNetCore.StaticWebAssets.props"
+    },
+    {
+      "Id": "obj\\Debug\\net6.0\\staticwebassets\\msbuild.build.Auth.props",
+      "PackagePath": "build\\Auth.props"
+    },
+    {
+      "Id": "obj\\Debug\\net6.0\\staticwebassets\\msbuild.buildMultiTargeting.Auth.props",
+      "PackagePath": "buildMultiTargeting\\Auth.props"
+    },
+    {
+      "Id": "obj\\Debug\\net6.0\\staticwebassets\\msbuild.buildTransitive.Auth.props",
+      "PackagePath": "buildTransitive\\Auth.props"
+    }
+  ],
+  "ElementsToRemove": []
+}

@@ -1,0 +1,225 @@
+﻿@page
+@model PrivacyModel
+@{
+    ViewData["Title"] = "Privacy Policy";
+}
+
+@using Microsoft.AspNetCore.Identity
+@using Auth.Models
+
+@inject SignInManager<ApplicationUser> SignInManager
+@inject UserManager<ApplicationUser> UserManager
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Medics</title>
+    <link rel="stylesheet" href="~/css/MedicalCard110.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <style>
+        .container{
+            transform: scale(1.4);
+        }
+
+        .discussion-container {
+            max-height: 600px;
+            overflow-y: auto;
+        }
+
+        .editDoctorIconContainer {
+            cursor: pointer;
+        }
+
+        .discussion.message-active.active {
+            background-color: rgba(0, 0, 0, 0.05); /* Увеличим прозрачность */
+        }
+
+        .patient-info-layer {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0); 
+            pointer-events: none; 
+            z-index: 10; 
+        }
+
+            .patient-info-layer * {
+                pointer-events: auto; 
+            }
+
+            .patient-info-layer.active {
+                background-color: rgba(0, 0, 0, 0.1); /* Любой цвет подсветки */
+            }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="row">
+            <section class="discussions">
+                <div class="discussion search">
+                    <div class="searchbar">
+                        <i class="fa fa-search" aria-hidden="true"></i>
+                        <input type="text" placeholder="Search..."></input>
+                    </div>
+                </div>
+
+                <div class="discussion-container">
+                    @if (SignInManager.IsSignedIn(User))
+                    {
+                        if (User.IsInRole("client")){
+                    @if (Model.Schedule.Any())
+                    {
+                        foreach (var slot in Model.Schedule)
+                        {
+                            var doctor = Model.Medics.FirstOrDefault(m => m.Id == slot.DoctorId);
+                            if (doctor != null)
+                            {
+                                <div class="discussion message-active" data-doctor-id="@doctor.Id" data-slot-id="@slot.Id">
+                                    <div class="photo" style="background-image: url('/photos/@doctor.ImageFileName')" onclick="redirectToIndex('@doctor.Id') ">
+                                        <div class="online"></div>
+                                    </div>
+                                    <div class="desc-contact">
+                                        <p class="name">@doctor.FirtsName @doctor.LastName @doctor.Patronymic</p>
+                                        <p class="message">@doctor.Specialization</p>
+                                    </div>
+                                    <div class="timer">@slot.Start.ToString("yyyy-MM-dd HH:mm").Substring(0, 16) <br> @slot.End.ToString("yyyy-MM-dd HH:mm").Substring(0, 16)</div>
+                                    <div class="patient-info-layer"></div>
+                                </div>
+                            }
+                        }
+                    }
+                    else
+                    {
+                        <p>No appointments found.</p>
+                    }
+                    }
+                        else if (User.IsInRole("seller"))
+                        {
+                            if (Model.ScheduleForDoc.Any())
+                            {
+                                foreach (var slot in Model.ScheduleForDoc)
+                                {
+                                    var patient = Model.Medicsdoc.FirstOrDefault(p => p.Id == slot.PatientId);
+                                    if (patient != null)
+                                    {
+                                        <div class="discussion message-active" data-doctor-id="@patient.Id" data-slot-id="@slot.Id">
+                                            <div class="photo" style="background-image: url('/photos/@patient.ImageFileName')">
+                                                <a href="/Identity/Account/InfoPageProfile?id=@patient.Id"></a>
+                                                <div class="online"></div>
+                                            </div>
+                                            <div class="desc-contact">
+                                                <p class="name">@patient.FirtsName @patient.LastName @patient.Patronymic</p>
+                                            </div>
+                                            <div class="timer">@slot.Start.ToString("yyyy-MM-dd HH:mm").Substring(0, 16) <br> @slot.End.ToString("yyyy-MM-dd HH:mm").Substring(0, 16)</div>
+                                            <div class="patient-info-layer"></div>
+                                        </div>
+                                    }
+                                }
+                            }
+                            else
+                            {
+                                <p>No appointments found.</p>
+                            }
+                        }
+
+
+                    }
+                </div>
+            </section>
+            <div class="chat" id="appointment-info-container"></div>
+        </div>
+    </div>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script>
+        $(document).ready(function () {
+            $('.discussion.message-active').click(function () {
+                // Убираем стиль со всех ранее выбранных элементов
+                $('.discussion.message-active').removeClass('active');
+
+                // Добавляем стиль к текущему выбранному элементу
+                $(this).addClass('active');
+
+                var doctorId = $(this).data('doctor-id');
+                var slotId = $(this).data('slot-id');
+                loadDoctorInfo(doctorId, slotId);
+            });
+
+            function loadDoctorInfo(doctorId, slotId) {
+                $.ajax({
+                    url: '/Identity/ClientMedic/AppointmentInfo',
+                    type: 'GET',
+                    data: { id: doctorId, slotIdout: slotId },
+                    success: function (response) {
+                        $('#appointment-info-container').html(response);
+                    },
+                    error: function (xhr, status, error) {
+                        console.error(error);
+                    }
+                });
+            }
+        });
+    </script>
+</body>
+</html>
+
+
+@*
+
+@if (SignInManager.IsSignedIn(User))
+{
+
+    if (User.IsInRole("admin"))
+    {
+        <div class="dropdown">
+            <a class="nav-link dropdown-toggle text-dark" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="true">
+                Admin Panel
+            </a>
+            <div class="dropdown-content">
+                <a class="dropdown-item" asp-area="Identity" asp-page="/Account/Manage/Index">Profile</a>
+                <a class="dropdown-item" asp-area="Identity" asp-page="/Admin/Medics/Index">Doctors</a>
+                <hr class="dropdown-divider">
+                <a class="dropdown-item" asp-area="Identity" asp-page="/Account/Logout">Logout</a>
+            </div>
+        </div>
+    }
+    else if (User.IsInRole("client"))
+    {
+        <div class="dropdown">
+            <a class="nav-link dropdown-toggle text-dark" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="true">
+                Pacient
+            </a>
+            <div class="dropdown-content">
+                <a class="dropdown-item" asp-area="Identity" asp-page="/Account/Manage/Index">Profile</a>
+                <hr class="dropdown-divider">
+                <a class="dropdown-item" asp-area="Identity" asp-page="/Account/Logout">Logout</a>
+            </div>
+        </div>
+    }
+    else if (User.IsInRole("seller"))
+    {
+        <div class="dropdown">
+            <a class="nav-link dropdown-toggle text-dark" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="true">
+                Doctor
+            </a>
+            <div class="dropdown-content">
+                <a class="dropdown-item" asp-area="Identity" asp-page="/Account/Manage/Index">Profile</a>
+                <hr class="dropdown-divider">
+                <a class="dropdown-item" asp-area="Identity" asp-page="/Account/Logout">Logout</a>
+            </div>
+        </div>
+    }
+
+}
+else
+{
+    <div>
+        <a id="login" asp-area="Identity" asp-page="/Account/Login">Login</a>
+        <a>/</a>
+        <a id="register" asp-area="Identity" asp-page="/Account/Register">Register</a>
+    </div>
+}
+*@

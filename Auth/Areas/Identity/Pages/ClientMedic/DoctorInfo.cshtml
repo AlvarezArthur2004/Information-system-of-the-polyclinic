@@ -1,0 +1,361 @@
+﻿@page
+@model Auth.Areas.Identity.Pages.ClientMedic.DoctorInfoModel
+@{
+}
+
+
+@using Microsoft.AspNetCore.Identity
+@using Auth.Models
+
+@inject SignInManager<ApplicationUser> SignInManager
+@inject UserManager<ApplicationUser> UserManager
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Medics</title>
+    <link rel="stylesheet" href="~/css/DoctorInfo900.css">
+    <script src="~/lib/daypilot/daypilot-all.min.js"></script>
+
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/rateYo/2.3.2/jquery.rateyo.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/rateYo/2.3.2/jquery.rateyo.min.js"></script>
+    <link rel="stylesheet" href="https://bootstraptema.ru/plugins/2015/bootstrap3/bootstrap.min.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" />
+    <script src="https://bootstraptema.ru/plugins/jquery/jquery-1.11.3.min.js"></script>
+    <script src="https://bootstraptema.ru/plugins/2015/b-v3-3-6/bootstrap.min.js"></script>
+</head>
+<body>
+
+    <div class="container">
+        <div id="main">
+            <div class="row" id="real-estates-detail">
+                <div class="col-lg-4 col-md-4 col-xs-12">
+                    <div class="panel panel-default">
+                        <div class="panel-heading">
+                            <header class="panel-title">
+                                <div class="text-center">
+                                    <strong>@Model.Medic.Specialization</strong>
+                                </div>
+                            </header>
+                        </div>
+                        <div class="panel-body overflow-auto">
+                            <div class="text-center" id="author">
+                                <img src="/photos/@Model.Medic.ImageFileName" width="212" height="212">
+                                <h3>@Model.Medic.FirtsName @Model.Medic.Patronymic @Model.Medic.LastName</h3>
+                                <small class="label label-warning">Україна</small>
+                                <br>
+                                <p>@Model.Medic.Description</p>
+                            </div>
+                            <hr>
+                            <h4>Інформація про користувача</h4>
+                            <table class="table table-bordered">
+                                <tbody>
+                                    <tr>
+                                        <th>Ім'я:</th>
+                                        <td>@Model.Medic.FirtsName</td>
+                                    </tr>
+                                    <tr>
+                                        <th>Прізвище:</th>
+                                        <td>@Model.Medic.LastName</td>
+                                    </tr>
+                                    <tr>
+                                        <th>По батькові:</th>
+                                        <td>@Model.Medic.Patronymic</td>
+                                    </tr>
+                                    <tr>
+                                        <th>Дата народження:</th>
+                                        <td>@Model.Medic.DateOfBirth</td>
+                                    </tr>
+                                    <tr>
+                                        <th>Стать:</th>
+                                        <td>@Model.Medic.Gender</td>
+                                    </tr>
+                                    <tr>
+                                        <th>Місце роботи:</th>
+                                        <td>@Model.Medic.WorkPlace</td>
+                                    </tr>
+                                    <tr>
+                                        <th>Спеціалізація:</th>
+                                        <td>@Model.Medic.Specialization</td>
+                                    </tr>
+                                    <tr>
+                                        <th>Номер телефону:</th>
+                                        <td>@Model.Medic.PhoneNumber</td>
+                                    </tr>
+                                    <tr>
+                                        <th>Почта:</th>
+                                        <td>@Model.Medic.Email</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+    <div class="columns">
+        <div class="column-left">
+            <div id="nav"></div>
+        </div>
+        <div class="column-main">
+            <div class="toolbar">Доступні часові інтервали:</div>
+            <div id="calendar"></div>
+        </div>
+    </div>
+
+    <script>
+        const app = {
+            get patientId() {
+                if (!localStorage["patientId"]) {
+                    localStorage["patientId"] = DayPilot.guid();
+                }
+                return localStorage["patientId"];
+            },
+            async loadEvents(day) {
+                const start = nav.visibleStart() > DayPilot.Date.now() ? nav.visibleStart() : DayPilot.Date.now();
+                const end = nav.visibleEnd();
+                const patient = app.patientId;
+
+                const doctorId = "@Model.Medic.Id";
+
+                const { data } = await DayPilot.Http.get(`/api/appointments?start=${start}&end=${end}&doctorId=${doctorId}`);
+
+                if (day) {
+                    calendar.startDate = day;
+                }
+                calendar.events.list = data;
+                calendar.update();
+
+                nav.events.list = data;
+                nav.update();
+            },
+            init() {
+                app.loadEvents();
+            }
+        };
+
+        const nav = new DayPilot.Navigator("nav", {
+            selectMode: "week",
+            showMonths: 3,
+            skipMonths: 3,
+            onTimeRangeSelected: (args) => {
+                const weekStarts = DayPilot.Locale.find(nav.locale).weekStarts;
+                const start = args.start.firstDayOfWeek(weekStarts);
+                const end = args.start.addDays(7);
+                app.loadEvents(start, end);
+            }
+
+        });
+        nav.init();
+
+        const calendar = new DayPilot.Calendar("calendar", {
+            viewType: "Week",
+            timeRangeSelectedHandling: "Disabled",
+            eventMoveHandling: "Disabled",
+            eventResizeHandling: "Disabled",
+            eventArrangement: "SideBySide",
+            onBeforeEventRender: (args) => {
+                switch (args.data.status) {
+                    case "free":
+                        args.data.backColor = "#3d85c6";  // blue
+                        args.data.barHidden = true;
+                        args.data.borderColor = "darker";
+                        args.data.fontColor = "white";
+                        args.data.html = `Доступно`;
+                        args.data.toolTip = "Натисніть, щоб запросити цей часовий інтервал";
+                        break;
+                    case "waiting":
+                        args.data.backColor = "#e69138";  // orange
+                        args.data.barHidden = true;
+                        args.data.borderColor = "darker";
+                        args.data.fontColor = "white";
+                        args.data.html = "Чекає на підтвердження";
+                        break;
+                    case "confirmed":
+                        args.data.backColor = "#6aa84f";  // green
+                        args.data.barHidden = true;
+                        args.data.borderColor = "darker";
+                        args.data.fontColor = "white";
+                        args.data.html = "Зайнято";
+                        break;
+                }
+            },
+            onEventClick: async (args) => {
+                if (args.e.data.status !== "free") {
+                    calendar.message("Будь ласка, скористайтеся вільним слотом для запису на прийом.");
+                    return;
+                }
+
+                const form = [
+                    { name: "Запишіться на прийом" },
+                    { name: "З", id: "start", dateFormat: "MMMM d, yyyy h:mm tt", disabled: true },
+                    { name: "До", id: "end", dateFormat: "MMMM d, yyyy h:mm tt", disabled: true },
+                    { name: "Комментар", id: "name" },
+                ];
+
+                const data = {
+                    id: args.e.id(),
+                    start: args.e.start(),
+                    end: args.e.end(),
+                    patient: "@Model.PatientId"
+                };
+
+                const options = {
+                    focus: "name"
+                };
+
+                const modal = await DayPilot.Modal.form(form, data, options);
+                if (modal.canceled) {
+                    return;
+                }
+
+                await DayPilot.Http.put(`/api/appointments/${data.id}/request`, modal.result);
+
+                args.e.data.status = "waiting";
+                calendar.events.update(args.e.data);
+
+            }
+        });
+        calendar.init();
+
+        app.init();
+
+    </script>
+
+    <div class="reviews-section">
+        <div class="review-form">
+            <h3>Залишити відгук</h3>
+            <form method="post" enctype="multipart/form-data" action="/Identity/ClientMedic/DoctorInfo/AddComment">
+                <div class="form-group">
+                    <label for="comment">Ваш коментар:</label>
+                    <textarea id="text" name="text" rows="4" required></textarea>
+                </div>
+                <div class="rating">
+                    <input type="hidden" id="rating-input" name="rating" value="0">
+                    <span class="star" data-rating="1">&#9733;</span>
+                    <span class="star" data-rating="2">&#9733;</span>
+                    <span class="star" data-rating="3">&#9733;</span>
+                    <span class="star" data-rating="4">&#9733;</span>
+                    <span class="star" data-rating="5">&#9733;</span>
+                </div>
+                <button type="submit" id="Submit" class="btn">Відправити</button>
+                <input type="hidden" id="id" name="id" value="@Model.PatientId" />
+                <input type="hidden" id="iddoctor" name="iddoctor" value="@Model.Medic.Id" />
+            </form>
+        </div>
+        <div class="review-list">
+            <h3>Останні відгуки</h3>
+            @foreach (var comment in Model.Comments)
+            {
+                var user = Model.Medics.FirstOrDefault(m => m.Id == comment.PacientId);
+                if (user != null)
+                {
+                    <div class="review">
+                        <div class="review-info">
+                            <div class="username-container">
+                                <span class="username">@user.FirtsName @user.LastName @user.Patronymic</span>
+                                <div class="rating1">
+                                    @for (int i = 0; i < Convert.ToInt32(comment.Rate); i++)
+                                    {
+                                        <span class="star1">&#9733;</span>
+                                    }
+                                </div>
+                            </div>
+                            <span class="date">@comment.CreatedAt.ToString("dd MMMM yyyy")</span>
+                        </div>
+                        <div class="comment-container">
+                            <p class="comment">@comment.Text</p>
+                        </div>
+                    </div>
+                }
+            }
+        </div>
+    </div>
+
+    <style>
+        .btn {
+            background-color: black;
+            color: white; 
+            border: none; 
+            padding: 10px 20px; 
+            font-size: 16px; 
+            cursor: pointer; 
+        }
+
+            .btn:hover {
+                background-color: #d65c00; 
+            }
+
+        .review-info {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .username-container {
+            display: flex;
+            align-items: center;
+        }
+
+        .rating1 {
+            margin-left: 10px;
+        }
+
+        .star1 {
+            display: inline-block;
+            font-size: 40px;
+            color: orange;
+        }
+
+    </style>
+
+
+    <script>
+        document.querySelectorAll('.star').forEach(star => {
+            star.addEventListener('mouseover', () => {
+                star.style.transform = 'scale(1.5)'; 
+            });
+            star.addEventListener('mouseout', () => {
+                star.style.transform = 'scale(1)';а
+            });
+            star.addEventListener('click', () => {
+                const rating = star.dataset.rating;
+                document.getElementById('rating-input').value = rating;
+                document.querySelectorAll('.star').forEach(s => {
+                    if (s.dataset.rating >= rating) {
+                        s.style.color = 'orange';
+                    } else {
+                        s.style.color = 'black';
+                    }
+                });
+            });
+        });
+    </script>
+
+
+    @*
+
+    @foreach (var comment in Model.Comments)
+    {
+    var user = Model.Medics.Find(m => m.Id == comment.PacientId);
+    if (user != null)
+    {
+    <div class="review">
+    <div class="review-info">
+    <span class="username">@user.UserName</span>
+    <span class="date">@comment.CreatedAt.ToString("dd MMMM yyyy")</span>
+    </div>
+    <p class="comment">@comment.Text</p>
+    </div>
+    }
+    }
+    *@
+
+</body>
+</html>

@@ -1,0 +1,277 @@
+﻿@page
+@model Auth.Areas.Identity.Pages.MedicalCard.FillnfoWordModel
+@{
+}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Medics</title>
+	<script src="~/lib/daypilot/daypilot-all.min.js"></script>
+        <style>
+
+
+        .tab-container {
+            border: 1px solid #ccc;
+            padding: 10px;
+            text-align: center;
+            font-size: 32px;
+        }
+
+        .tab-buttons {
+            display: flex;
+            justify-content: center;
+            margin-bottom: 10px;
+            font-size: 20px;
+        }
+
+        .tab-button {
+            background-color: #f0f0f0;
+            border: none;
+            padding: 10px 20px;
+            cursor: pointer;
+            margin-top: 5px;
+        }
+
+        .tab-button.active {
+            background-color: #ccc;
+        }
+
+        .tab-content {
+            display: none;
+        }
+
+        .tab-content.active {
+            display: block;
+        }
+
+        .div1 {
+            margin-top: 5%;
+            padding: 20px;
+        }
+
+
+        form {
+            background-color: white;
+            border-radius: 20px;
+            -webkit-box-shadow: 5px 5px 20px 0px rgba(173,173,173,1);
+            -moz-box-shadow: 5px 5px 20px 0px rgba(173,173,173,1);
+            box-shadow: 5px 5px 20px 0px rgba(173,173,173,1);
+            padding: 1.5em;
+            min-width: 768px;
+            padding: 2.5em;
+        }
+
+        h2 {
+            text-align: center;
+            font-size: 32px;
+            padding: 0;
+            margin-bottom: 20px;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 5px;
+            font-size: 32px;
+        }
+
+        input, select {
+            padding: 10px 16px;
+            width: 100%;
+            outline: 0;
+            margin-bottom: 20px;
+            border-radius: 20px;
+            border: 0;
+            background-color: #ededed;
+            font-size: 18px;
+            -webkit-appearance: none;
+            -moz-appearance: none;
+            appearance: none;
+        }
+
+        .textarea-div {
+            width: 100%;
+        }
+
+        textarea {
+            padding: 10px;
+            width: 100%;
+            outline: 0;
+            margin-bottom: 20px;
+            border-radius: 20px;
+            border: 0;
+            background-color: #ededed;
+            font-size: 18px;
+            height: 100px;
+        }
+        .btn {
+            background-color: #ccc;
+            padding: 12px 15px;
+            width: 100%;
+            font-size: 20px;
+            font-weight: 700;
+            text-transform: uppercase;
+            border: 1px solid transparent;
+            border-radius: 20px;
+            transition: 0.3s all ease;
+            cursor: pointer;
+        }
+
+        .btn:hover {
+            background-color: #bbb;
+        }
+
+ 
+    </style>
+</head>
+<body>
+    <div class="div1">
+    <div class="container">
+        <div class="tabs-container">
+            <div class="tab-buttons">
+                <button class="tab-button active" onclick="openTab(event, 'tab1')">Investigation Results Record</button>
+                <button class="tab-button" onclick="openTab(event, 'tab2')">Medication Administration Record</button>
+                <button class="tab-button" onclick="openTab(event, 'tab3')">Surgical and Procedural Record</button>
+                <button class="tab-button" onclick="openTab(event, 'tab4')">Current Health Status Record</button>
+            </div>
+                <div class="tab-content" id="tab1">
+                    <form method="post" enctype="multipart/form-data" action="/Identity/MedicalCard/FillnfoWord/AddInfoFirstTab">
+                        <h2>Запис результатів досліджень</h2>
+                        <div class="large-group">
+                            <div class="small-group">
+                                <label for="typeOfInvestigation">Тип дослідження</label>
+                                <input id="typeOfInvestigation" type="text" name="typeOfInvestigation" />
+                            </div>
+                            <div class="small-group">
+                                <label for="results">Результати</label>
+                                <input id="results" type="text" name="results" />
+                            </div>
+                            <div class="small-group">
+                                <label for="referenceRanges">Нормальні значення</label>
+                                <input id="referenceRanges" type="text" name="referenceRanges" />
+                            </div>
+                            <div class="small-group">
+                                <label for="interpretation">Інтерпретація</label>
+                                <input id="interpretation" type="text" name="interpretation" />
+                            </div>
+                            <div class="textarea-div">
+                                <label for="extraInformation">Додаткова інформація</label>
+                                <textarea id="extraInformation" name="extraInformation"></textarea>
+                            </div>
+
+                            <input type="hidden" id="id" name="id" value="@Model.Doctor.Id" />
+                            <input type="hidden" id="iddoctor" name="iddoctor" value="@Model.Iddoctor" />
+                        </div>
+                        <button type="submit" class="btn">Надіслати</button>
+                    </form>
+                </div>
+                <div class="tab-content" id="tab2">
+                    <form method="post" enctype="multipart/form-data" action="/Identity/MedicalCard/FillnfoWord/AddInfoSecondTab">
+                        <h2>Запис прийому ліків</h2>
+                        <div class="large-group">
+                            <div class="small-group">
+                                <label for="complaints">Назва препарату</label>
+                                <input id="medicationame" type="text" name="medicationame" />
+                            </div>
+                            <div class="small-group">
+                                <label for="complaints">Дозування</label>
+                                <input id="dosage" type="text" name="dosage" />
+                            </div>
+                            <div class="small-group">
+                                <label for="complaints">Частота вживання</label>
+                                <input id="frequencyofadministration" type="text" name="frequencyofadministration" />
+                            </div>
+                            <div class="small-group">
+                                <label for="complaints">Тривалість прийому</label>
+                                <input id="durationofadministration" type="text" name="durationofadministration" />
+                            </div>
+                            <div class="textarea-div">
+                                <label for="extrainformation">Додаткова інформація</label>
+                                <textarea id="extrainformation" type="text" name="extrainformation"></textarea>
+                            </div>
+                            <input type="hidden" id="id" name="id" value="@Model.Doctor.Id" />
+                            <input type="hidden" id="iddoctor" name="iddoctor" value="@Model.Iddoctor" />
+                        </div>
+                        <button type="submit" class="btn">Надіслати</button>
+                    </form>
+                </div>
+                <div class="tab-content" id="tab3">
+                    <form method="post" enctype="multipart/form-data">
+                        <h2>Хірургічна та процедурна запис</h2>
+                        <div class="large-group">
+                            <div class="small-group">
+                                <label for="complaints">Дата операції чи процедури</label>
+                                <input id="complaints" type="text" name="complaints" />
+                            </div>
+                            <div class="small-group">
+                                <label for="complaints">Тип операції чи процедури</label>
+                                <input id="complaints" type="text" name="complaints" />
+                            </div>
+                            <div class="small-group">
+                                <label for="complaints">Ускладнення</label>
+                                <input id="complaints" type="text" name="complaints" />
+                            </div>
+                            <div class="textarea-div">
+                                <label for="message">Додаткова інформація</label>
+                                <textarea id="message" type="text" name="message"></textarea>
+                            </div>
+                            <input type="hidden" id="id" name="id" value="@Model.Doctor.Id" />
+                            <input type="hidden" id="iddoctor" name="iddoctor" value="@Model.Iddoctor" />
+                        </div>
+                        <button type="submit" class="btn">Надіслати</button>
+                    </form>
+                </div>
+                <div class="tab-content" id="tab4">
+                    <form method="post" enctype="multipart/form-data">
+                        <h2>Запис про поточний стан здоров'я</h2>
+                        <div class="large-group">
+                            <div class="small-group">
+                                <label for="complaints">Основні скарги</label>
+                                <input id="complaints" type="text" name="complaints" />
+                            </div>
+                            <div class="small-group">
+                                <label for="complaints">Зміни в стані здоров'я</label>
+                                <input id="complaints" type="text" name="complaints" />
+                            </div>
+                            <div class="small-group">
+                                <label for="complaints">Результати останніх досліджень</label>
+                                <input id="complaints" type="text" name="complaints" />
+                            </div>
+                            <div class="small-group">
+                                <label for="complaints">План лікування та рецепти</label>
+                                <input id="complaints" type="text" name="complaints" />
+                            </div>
+                            <input type="hidden" id="id" name="id" value="@Model.Doctor.Id" />
+                            <input type="hidden" id="iddoctor" name="iddoctor" value="@Model.Iddoctor" />
+                        </div>
+                        <button type="submit" class="btn">Надіслати</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+        <div class="records-container">
+
+
+        </div>
+    </div>
+    </div>
+
+    <script>
+        function openTab(event, tabName) {
+            var i, tabContent, tabButtons;
+            tabContent = document.querySelectorAll(".tab-content");
+            for (i = 0; i < tabContent.length; i++) {
+                tabContent[i].classList.remove("active");
+            }
+            tabButtons = document.querySelectorAll(".tab-button");
+            for (i = 0; i < tabButtons.length; i++) {
+                tabButtons[i].classList.remove("active");
+            }
+            document.getElementById(tabName).classList.add("active");
+            event.currentTarget.classList.add("active");
+        }
+    </script>
+</body>
+</html>

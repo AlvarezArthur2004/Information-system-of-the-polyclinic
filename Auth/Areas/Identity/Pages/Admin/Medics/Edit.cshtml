@@ -1,0 +1,229 @@
+﻿@page
+@model Auth.Areas.Identity.Pages.Admin.Medics.EditModel
+@{
+}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="~/css/CreateMed12.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Medics</title>
+</head>
+<body>
+    <style>
+        body {
+            font-size: 1.4em;
+        }
+
+        h2 {
+            font-size: 1.7em;
+        }
+
+        .btn {
+            font-size: 1.4em;
+        }
+
+        .form-control {
+            font-size: 1.4em;
+        }
+
+        .form-select {
+            font-size: 1.4em;
+        }
+
+        .text-danger {
+            font-size: 1.4em;
+        }
+    </style>
+
+
+    <div class="row">
+        <div class="col-md-8 mx-auto rounded border p-3">
+            <h2 class="text-center mb-5">Редагувати</h2>
+
+            @if (Model.errorMessage.Length > 0)
+            {
+                <div class='alert alert alert-warning alert-dismissible fade show' role='alert'>
+                    <strong>@Model.errorMessage</strong>
+                    <button type='button' class='btn-close' data-bs-dismiss="alert" aria-label="Close"></button>
+                </div>
+
+            }
+            else if (Model.successMessage.Length > 0)
+            {
+                <div class='alert alert alert-warning alert-dismissible fade show' role='alert'>
+                    <strong>@Model.successMessage</strong>
+                    <button type='button' class='btn-close' data-bs-dismiss="alert" aria-label="Close"></button>
+                </div>
+            }
+
+            <form method="post" enctype="multipart/form-data">
+
+                <div class="row mb-3">
+                    <label class="col-sm-4 col-form-label">ID</label>
+                    <div class="col-sm-8">
+                        <input readonly class="form-control-plaintext" value="@Model.Medic.Id">
+                    </div>
+                </div>
+
+                <div class="row mb-3">
+                    <label class="col-sm-4 col-form-label">Ім'я</label>
+                    <div class="col-sm-8">
+                        <input class="form-control" asp-for="MedicDto.FirtsName">
+                        <span asp-validation-for="MedicDto.FirtsName" class="text-danger"></span>
+                    </div>
+                </div>
+
+                <div class="row mb-3">
+                    <label class="col-sm-4 col-form-label">Прізвище</label>
+                    <div class="col-sm-8">
+                        <input class="form-control" asp-for="MedicDto.LastName">
+                        <span asp-validation-for="MedicDto.LastName" class="text-danger"></span>
+                    </div>
+                </div>
+
+                <div class="row mb-3">
+                    <label class="col-sm-4 col-form-label">Ім'я по батькові</label>
+                    <div class="col-sm-8">
+                        <input class="form-control" asp-for="MedicDto.Patronymic">
+                        <span asp-validation-for="MedicDto.Patronymic" class="text-danger"></span>
+                    </div>
+                </div>
+
+                <div class="row mb-3">
+                    <label class="col-sm-4 col-form-label">Стать</label>
+                    <div class="col-sm-8">
+                        <select class="form-select" asp-for="MedicDto.Gender">
+                            <option value="Male">Male</option>
+                            <option value="Female">Female</option>
+                        </select>
+                    </div>
+                </div>
+
+                <div class="row mb-3">
+                    <label class="col-sm-4 col-form-label">Електронна пошта</label>
+                    <div class="col-sm-8">
+                        <input class="form-control" asp-for="MedicDto.Email">
+                        <span asp-validation-for="MedicDto.Email" class="text-danger"></span>
+                    </div>
+                </div>
+
+                <div class="row mb-3">
+                    <label class="col-sm-4 col-form-label">Номер телефону</label>
+                    <div class="col-sm-8">
+                        <input class="form-control" asp-for="MedicDto.PhoneNumber">
+                        <span asp-validation-for="MedicDto.PhoneNumber" class="text-danger"></span>
+                    </div>
+                </div>
+
+                <div class="row mb-3">
+                    <label class="col-sm-4 col-form-label">Пароль</label>
+                    <div class="col-sm-8">
+                        <input class="form-control" asp-for="MedicDto.Password">
+                        <span asp-validation-for="MedicDto.Password" class="text-danger"></span>
+                    </div>
+                </div>
+
+                <div class="row mb-3">
+                    <label class="col-sm-4 col-form-label">Спеціалізація</label>
+                    <div class="col-sm-8">
+                        <select class="form-select" asp-for="MedicDto.Specialization">
+                            <option value="Терапевт">Терапевт</option>
+                            <option value="Хірург">Хірург</option>
+                            <option value="Педіатр">Педіатр</option>
+                            <option value="Невролог">Невролог</option>
+                            <option value="Дерматолог">Дерматолог</option>
+                            <option value="Пластичний хірург">Пластичний хірург</option>
+                            <option value="Ортопед">Ортопед</option>
+                            <option value="Фізичний терапевт">Фізичний терапевт</option>
+                            <option value="Психіатр">Психіатр</option>
+                            <option value="Офтальмолог">Офтальмолог</option>
+                        </select>
+                    </div>
+                </div>
+
+                <div class="row mb-3">
+                    <label class="col-sm-4 col-form-label">Робоче місце</label>
+                    <div class="col-sm-8">
+                        <input class="form-control" asp-for="MedicDto.WorkPlace">
+                        <span asp-validation-for="MedicDto.WorkPlace" class="text-danger"></span>
+                    </div>
+                </div>
+
+                <div class="row mb-3">
+                    <label class="col-sm-4 col-form-label">Дата Народження</label>
+                    <div class="col-sm-8">
+                        @{
+                            var currentDate = DateTime.Now;
+                            var formattedDate = currentDate.ToString("yyyy-MM-dd");
+                        }
+                        <input class="form-control" asp-for="MedicDto.DateOfBirth" type="date" value="@formattedDate">
+                        <span asp-validation-for="MedicDto.DateOfBirth" class="text-danger"></span>
+                    </div>
+                </div>
+
+                <div class="row mb-3">
+                    <label class="col-sm-4 col-form-label">Опис</label>
+                    <div class="col-sm-8">
+                        <input class="form-control" asp-for="MedicDto.Description">
+                        <span asp-validation-for="MedicDto.Description" class="text-danger"></span>
+                    </div>
+                </div>
+
+                <div class="row mb-3">
+                    <label class="col-sm-4 col-form-label">Зображення</label>
+                    <div class="col-sm-8">
+                        <input class="form-control" asp-for="MedicDto.ImageFile">
+                        <span asp-validation-for="MedicDto.ImageFile" class="text-danger"></span>
+                    </div>
+                </div>
+
+                <div class="row mb-3">
+                    <a asp-area="Identity" asp-page="/Admin/Medics/ScheduleCreate" asp-route-id="@Model.Medic.Id"><span>Складіть графік</span></a>
+                </div>
+                
+
+                <div class="row mb-3">
+                    <div class="offset-sm-4 col-sm-4 d-grid">
+                        <button type="submit" class="btn btn-primary">Надіслати</button>
+                    </div>
+                    <div class="col-sm-4 d-grid">
+                        <a class="btn btn-outline-primary" href="/Identity/Admin/Medics/Index" role="button">Скасувати</a>
+                    </div>
+                </div>
+            </form>
+            <table class="table">
+                <tr>
+                    <th style="cursor: pointer;" onclick="sortTable('Id')">ID</th>
+                    <th>Текст</th>
+                    <th>Автор</th>
+                    <th>Рейтинг</th>
+
+                    <th>Дії</th>
+                </tr>
+
+                @foreach (var comment in Model.Comments)
+                {
+                    var user = Model.Medics.FirstOrDefault(m => m.Id == comment.PacientId);
+                    if (user != null)
+                    {
+                        <tr>
+                            <td>@comment.Id</td>
+                            <td>@user.FirtsName @user.LastName @user.Patronymic</td>
+                            <td>@comment.Text</td>
+                            <td>@comment.Rate</td>
+                            <td>
+                                <a class="btn btn-danger btn-sm" href="/Identity/Admin/Medics/DeleteComment?id=@comment.Id">Видалити</a>
+                            </td>
+                        </tr>
+
+                    }
+                }
+            </table>
+        </div>
+    </div>
+
+</body>
+</html>

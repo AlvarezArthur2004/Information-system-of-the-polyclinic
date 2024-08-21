@@ -1,0 +1,80 @@
+﻿@using Microsoft.AspNetCore.Identity
+@using Auth.Models
+@using System.Security.Claims
+
+@inject SignInManager<ApplicationUser> SignInManager
+@inject UserManager<ApplicationUser> UserManager
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>@ViewData["Title"] - Hospital</title>
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="~/css/site230.css" asp-append-version="true" />
+    <link rel="stylesheet" href="~/Hospital.styles.css" asp-append-version="true" />
+</head>
+<body>
+
+    <section class="header">
+
+        <a href="/Index" class="logo">
+            <img src="/Content/MainPageContent/mainlogo.png" alt="logo">
+        </a>
+
+        @if (!User.Identity.IsAuthenticated)
+        {
+            <nav class="navbar">
+                <a href="/Identity/ClientMedic/IndexClient">Записатися на прийом</a>
+                <a></a>
+                <partial name="_LoginPartial" />
+            </nav>
+        }
+
+        @if (SignInManager.IsSignedIn(User))
+        {
+            if (User.IsInRole("admin"))
+            {
+                <nav class="navbar">
+                    <a></a>
+                    <partial name="_LoginPartial" />
+                </nav>
+            }
+            else if (User.IsInRole("client"))
+            {
+                <nav class="navbar">
+                    <a href="/Identity/ClientMedic/IndexClient">Записатися на прийом</a>
+                    <a href="/Privacy">Інформація про зустріч</a>
+                    <a></a>
+                    <partial name="_LoginPartial" />
+                </nav>
+            }
+            else if (User.IsInRole("seller"))
+            {
+                var patientId = User.FindFirstValue(ClaimTypes.NameIdentifier);
+                <nav class="navbar">
+                    <a href="/Privacy">Інформація про зустріч</a>
+                    <a asp-area="Identity" asp-page="/Admin/Medics/ScheduleCreate" asp-route-id="@patientId">Розклад</a>
+                    <a></a>
+                    <partial name="_LoginPartial" />
+                </nav>
+            }
+        }
+            </section>
+
+
+
+    <div class="userwindow">
+        <main role="main" class="pb-3">
+            @RenderBody()
+        </main>
+    </div>
+
+    <script src="~/lib/jquery/dist/jquery.min.js"></script>
+    <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="~/js/site.js" asp-append-version="true"></script>
+
+    @await RenderSectionAsync("Scripts", required: false)
+</body>
+</html>

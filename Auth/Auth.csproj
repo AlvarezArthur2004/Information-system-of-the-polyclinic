@@ -1,0 +1,61 @@
+﻿<Project Sdk="Microsoft.NET.Sdk.Web">
+
+  <PropertyGroup>
+    <TargetFramework>net6.0</TargetFramework>
+    <Nullable>enable</Nullable>
+    <ImplicitUsings>enable</ImplicitUsings>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.AspNetCore.Identity.EntityFrameworkCore" Version="6.0.27" />
+    <PackageReference Include="Microsoft.AspNetCore.Identity.UI" Version="6.0.27" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.Sqlite" Version="6.0.27" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.SqlServer" Version="7.0.16" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.Tools" Version="7.0.16">
+      <PrivateAssets>all</PrivateAssets>
+      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+    </PackageReference>
+    <PackageReference Include="Microsoft.NETCore.App" Version="2.2.8" />
+    <PackageReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Design" Version="6.0.16" />
+    <PackageReference Include="Syncfusion.DocIO.Net.Core" Version="25.1.39" />
+    <PackageReference Include="Syncfusion.DocIORenderer.Net.Core" Version="25.1.39" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Include="wwwroot\images\about1.png" />
+    <None Include="wwwroot\images\about2.png" />
+    <None Include="wwwroot\images\about3.jpg" />
+    <None Include="wwwroot\images\about4.png" />
+    <None Include="wwwroot\images\backgroung-pattern-1.png" />
+    <None Include="wwwroot\images\backgroung-pattern-3.png" />
+    <None Include="wwwroot\images\bg blur2.jpg" />
+    <None Include="wwwroot\images\bg-07.png" />
+    <None Include="wwwroot\images\blurbg1.jpg" />
+    <None Include="wwwroot\images\color.txt" />
+    <None Include="wwwroot\images\her1.png" />
+    <None Include="wwwroot\images\hero.jpg" />
+    <None Include="wwwroot\images\hero2.png" />
+    <None Include="wwwroot\images\img-06.png" />
+    <None Include="wwwroot\images\img-08.jpg" />
+    <None Include="wwwroot\images\logo.png" />
+    <None Include="wwwroot\images\logo2.png" />
+    <None Include="wwwroot\images\logo3.png" />
+    <None Include="wwwroot\images\pic1.png" />
+    <None Include="wwwroot\images\pic2.png" />
+    <None Include="wwwroot\images\pic3.png" />
+    <None Include="wwwroot\images\pleased-young-female-doctor-wearing-medical-robe-stethoscope-around-neck-standing-with-closed-posture.jpg" />
+    <None Include="wwwroot\images\review1.png" />
+    <None Include="wwwroot\images\review2.png" />
+    <None Include="wwwroot\images\team1.jpg" />
+    <None Include="wwwroot\images\team2.jpg" />
+    <None Include="wwwroot\images\team3.jpg" />
+    <None Include="wwwroot\images\team4.jpg" />
+    <None Include="wwwroot\images\team5.jpg" />
+    <None Include="wwwroot\images\team6.jpg" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="wwwroot\Data\" />
+  </ItemGroup>
+
+</Project>
