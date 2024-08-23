@@ -14,7 +14,7 @@ This is a hospital management system on ASP.NET.CORE that includes scheduling, e
 - Syncfusion.DocIO.Net.Core
 - Syncfusion.DocIORenderer.Net.Core
 
-  ## How to start
+## How to start
 Download all essential Framework. Also you need to upload Microsoft SQL Server Manager and make basic setting.
 
 Open NuGet Package Console and write this commands
